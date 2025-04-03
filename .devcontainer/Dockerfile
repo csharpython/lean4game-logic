@@ -1,28 +1,18 @@
-FROM node:20
+FROM mcr.microsoft.com/devcontainers/cpp:1-debian-11
 
-WORKDIR /
+ARG REINSTALL_CMAKE_VERSION_FROM_SOURCE="none"
 
-COPY ./lean-toolchain /lean-toolchain
+# Optionally install the cmake for vcpkg
+COPY ./reinstall-cmake.sh /tmp/
 
-USER node
+RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
+        chmod +x /tmp/reinstall-cmake.sh && /tmp/reinstall-cmake.sh ${REINSTALL_CMAKE_VERSION_FROM_SOURCE}; \
+    fi \
+    && rm -f /tmp/reinstall-cmake.sh
 
-WORKDIR /home/node
+# [Optional] Uncomment this section to install additional vcpkg ports.
+# RUN su vscode -c "${VCPKG_ROOT}/vcpkg install <your-port-name-here>"
 
-RUN export LEAN_VERSION="$(cat /lean-toolchain | grep -oE '[^:]+$')" && git clone --depth 1 --branch $LEAN_VERSION https://github.com/leanprover-community/lean4game.git
-
-WORKDIR /
-
-USER root
-
-ENV ELAN_HOME=/usr/local/elan \
-  PATH=/usr/local/elan/bin:$PATH
-
-SHELL ["/bin/bash", "-euxo", "pipefail", "-c"]
-
-RUN export LEAN_VERSION="$(cat /lean-toolchain)" && \
-  curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --no-modify-path --default-toolchain $LEAN_VERSION; \
-    chmod -R a+w $ELAN_HOME; \
-    elan --version; \
-    lean --version; \
-    leanc --version; \
-    lake --version;
+# [Optional] Uncomment this section to install additional packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>

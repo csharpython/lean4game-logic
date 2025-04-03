@@ -1,3 +1,9 @@
+# Note
+こちらはLean4LogicGameの非公式日本語訳です。
+現在(2025/04/03)Lean4Gameが日本語非対応なので、zhで代用しています。
+いろいろミスあるかも。ごめんね。
+作り途中です。
+
 # Lean 4 Logic Game
 
 This is a game about propositional logic as expressed in the Lean Theorem Prover. It uses the [Lean4 Game Engine](https://github.com/leanprover-community/lean4game) and is running live at [adam.math.hhu.de](https://adam.math.hhu.de/#/g/Trequetrum/lean4game-logic)
