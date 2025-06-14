@@ -85,7 +85,7 @@
  "That's settled": "",
  "That's better, but you'd better send out those invites so you can get some responses!\r\n\r\n----\r\n```\r\nhave a := h1.left\r\nhave u := h2.right\r\nexact and_intro a u\r\n```\r\n---\r\n```\r\nexact and_intro h1.left h2.right\r\n```\r\n----\r\n```\r\nexact and_intro (and_left h1) (and_right h2)\r\n```\r\n---\r\n```\r\nexact ⟨h1.left, h2.right⟩\r\n```":
  "これでいいと思うけど、招待状を送って反応を見たほうがいいよ！\r\n\r\n----\r\n```\r\nhave a := h1.left\r\nhave u := h2.right\r\nexact and_intro a u\r\n```\r\n---\r\n```\r\nexact and_intro h1.left h2.right\r\n```\r\n----\r\n```\r\nexact and_intro (and_left h1) (and_right h2)\r\n```\r\n---\r\n```\r\nexact ⟨h1.left, h2.right⟩\r\n```",
- "Take apart and build evidence": "",
+ "Take apart and build evidence": "証拠を分解し、構築する",
  "Swapping": "",
  "Statement": "",
  "Show ¬(P ∧ A)": "",
@@ -94,7 +94,7 @@
  "Show P → ¬A.": "",
  "Self Contradictory 2": "",
  "Self Contradictory": "",
- "Rinse and Repeat": "",
+ "Rinse and Repeat": "繰り返し",
  "Right Evidence": "",
  "Riffin is bringing a unicorn snack": "",
  "Riffin Snacks": "",
@@ -110,7 +110,7 @@
  "Rearranging Boxes": "箱の並べ替え",
  "Practise Makes Perfect": "習うより慣れろ",
  "Phew, that makes perfect sense now.": "",
- "P and Q implies P": "",
+ "P and Q implies P": "「PかつQ」はPを包含する",
  "Or is Commutative": "",
  "Or Introduction Right": "",
  "Or Introduction Left": "",
@@ -124,7 +124,7 @@
  "",
  "Oh, how nice! A fast solution to a complex problem.\r\n\r\n----\r\nIf you've read the inventory page for `rw`, you may have seen another solution too. You can use the backwards arrow “`←`” to change `P`s to `L`s instead of `L`s to `P`s. Also, you can change a hypothesis instead of the goal.\r\n```\r\nrw [← h₁] at h₂\r\nexact h₂\r\n```\r\n\r\nHere's an example of what this looks like without the `rw` tactic — if you want to try this solution, copy & paste the following text to the editor input mode.\r\n```\r\nexact ⟨\r\n  λh₃ ↦ have ⟨a,c,np⟩ := h₂.mp (\r\n    λh₄ ↦ h₃ (λ⟨hl₅,hr₅⟩ l ↦ h₄ ⟨\r\n      λa ↦ or_elim\r\n        (hl₅ a)\r\n        or_inl\r\n        (imp_trans h₁.mpr ≫ or_inr)\r\n    ,\r\n      λ_ ↦ hr₅ (or_inl l)\r\n    ⟩ (h₁.mp l))\r\n  )\r\n  ⟨a, c, h₁.mp ≫ np⟩\r\n,\r\n  λ⟨a,c,nl⟩ _ ↦ false_elim (\r\n    h₂.mpr\r\n      ⟨a, c, h₁.mpr ≫ nl⟩\r\n      λ_ _ ↦ c\r\n  )\r\n⟩\r\n```\r\nThe thing to notice here is that this long-form solution needs both `h₁.mp` and `h₁.mpr`. Keep in mind that though it’s often tempting to try to use conditionals (`→`), rewrite **requires** a biconditional (`↔`) to work.":
  "",
- "Nothing New": "",
+ "Nothing New": "新しいことはない",
  "Not Tactics Boss": "",
  "Not False": "",
  "Nice. Onward!\r\n\r\n----\r\n```\r\nexact h.right\r\n```\r\n----\r\n```\r\nexact and_right h\r\n```":
@@ -135,7 +135,7 @@
  "Negated Conjunction": "",
  "Navigate the tree": "ツリーのナビゲーション",
  "More Elimination": "もっと除去を",
- "More Cases": "",
+ "More Cases": "もっとcasesを",
  "Modus Tollens.": "",
  "Modus Tollens": "",
  "Mix and Match": "混ぜて合わせて",
@@ -191,15 +191,15 @@
  "Commutativity of “`∨`”": "",
  "Commutativity of \"`∨`\"": "",
  "Common! Cake is Cake": "",
- "Combining your new tactics": "",
+ "Combining your new tactics": "新しいタクティクを組み合わせる",
  "Change the goal to `False`. This is only helpful when there are assumptions which are in some way contradictory.\r\n### Example\r\n```\r\nAssumptions\r\nh : P ∧ ¬P\r\nGoal: Q\r\n```\r\nI cannot show evidence for `Q` directly, but because `False → Q` is trivially true (False implies anything), I can use the tactic `exfalso` which changes the Goal:\r\n```\r\nAssumptions\r\nh : P ∧ ¬P\r\nGoal: Q\r\n```\r\nAfter which `exact h.right r.left` meets the current goal.\r\n### Apply\r\n`exfalso` is the same as `apply false_elim`.\r\n∴ to show `Q` by `False → Q`, it suffices to show `False`.":
  "",
  "Chain Reasoning": "",
- "Cases for a Conjunction": "",
+ "Cases for a Conjunction": "論理積のケース",
  "Carry On Effects": "",
  "Cake Form Swap": "",
  "Cake Delivery Service": "",
- "Both P and Q entails just Q as well!": "「PかつQ」は、ただQも含んでいる！",
+ "Both P and Q entails just Q as well!": "「PかつQ」は、Qも伴っている！",
  "Assumption": "仮定",
  "As proof terms start getting bigger, it makes more sense to use Editor mode instead of typewritter mode.\r\n\r\n----\r\n```\r\nexact or_elim h\r\n  (λg ↦ ⟨or_inl g, or_inl g⟩)\r\n  (λhu ↦ ⟨or_inr hu.left, or_inr hu.right⟩)\r\n```\r\nYou can split this up a bit, but you'll need to write out a lot of propositions in full.\r\n```\r\n-- the case for g\r\nhave fg : G → (G ∨ H) ∧ (G ∨ U) :=\r\n    λg ↦ ⟨or_inl g, or_inl g⟩\r\n\r\n-- the case for H ∧ U\r\nhave fhu : H ∧ U → (G ∨ H) ∧ (G ∨ U) :=\r\n    λhu ↦ ⟨or_inr hu.left, or_inr hu.right⟩\r\n\r\n-- Finish it out with or_elim\r\nexact or_elim h fg fhu\r\n```":
  "",
@@ -207,7 +207,7 @@
  "Apply Backwards": "",
  "Apply": "",
  "Another One": "",
- "And Tactic Boss": "",
+ "And Tactic Boss": "「かつ」　タクティク　ボス",
  "And Introduction": "「かつ」の入門",
  "And Elimination 2": "「かつ」の除去則 2",
  "And Elimination": "「かつ」の除去則",
@@ -216,7 +216,7 @@
  "Amazing! You've helped save your cat!\r\n\r\n----\r\nHere are three solutions, are you able to follow each of them?\r\n```\r\nhave h₁ := and_left h\r\nhave h₂ := and_right h₁\r\nhave h₃ := and_left h₂\r\nhave h₄ := and_left h₃\r\nhave h₅ := and_right h₄\r\nexact h₅\r\n```\r\nor\r\n```\r\nexact and_right (and_left (and_left (and_right (and_left h))))\r\n```\r\nor\r\n```\r\nexact h.left.right.left.left.right\r\n```":
  "いいね！あなたはあなたの猫を助けました！\r\n\r\n----\r\nここに3つの解決策があります、それぞれ従うことができますか？\r\n```\r\nhave h₁ := and_left h\r\nhave h₂ := and_right h₁\r\nhave h₃ := and_left h₂\r\nhave h₄ := and_left h₃\r\nhave h₅ := and_right h₄\r\nexact h₅\r\n```\r\nor\r\n```\r\nexact and_right (and_left (and_left (and_right (and_left h))))\r\n```\r\nor\r\n```\r\nexact h.left.right.left.left.right\r\n```",
  "Amazing! You've beaten the `∧` world a second time and you've learned some extra tactics in the process.":
- "",
+ "よくやった！あなたは2番目の`∧`ワールドを制し、その過程でさらなるタクティクを学んだ。",
  "Amazing! He is bringing a snack and you have evidence to prove it too!\r\n\r\n----\r\nHere are two solutions to Riffin's puzzle. Sometimes it's helpful to see the same puzzles solved in more than one way.\r\n```\r\nhave q := h₁ p\r\nhave t := h₃ q\r\nhave u := h₅ t\r\nexact u\r\n```\r\nor nest them together:\r\n```\r\nexact h₅ (h₃ (h₁ p))\r\n```\r\nor use the `imp_trans` theorem from the previous world:\r\n```\r\nhave hpt := imp_trans h₁ h₃\r\nhave hpu := imp_trans hpt h₅\r\nexact hpu p\r\n```\r\nor if you've seen the infix operator for `imp_trans`:\r\n```\r\nexact (h₁ ≫ h₃ ≫ h₅) p\r\n```":
  "",
  "Almost a repeat of level 1. That was fast.\r\n\r\nYou'll notice that last time you showed evidence for a proposition involving “Oranges are a vegetable” even though you probably know that oranges are a fruit and not a vegetable. This time you did the same for “sprinkles are super colourful,” which you probably know is true.\r\n\r\nWhat this demonstrates is that `∨` is an inclusive “or”, which means at least one of the propositions is true. It could be both or just one.":
@@ -263,7 +263,7 @@
  "# `fun _ => _`\r\nYou can create evidence for an implication by defining the appropriate function.\r\n- `have h₁ : P → P := fun p : P => p`\r\n- `have h₂ : P ∧ Q → P := fun h : P ∧ Q => h.left`\r\n\r\nGenerally, you don't need to repeat the types when they're obvious from the context.\r\n- `have h₁ : P → P := fun p => p`\r\n- `have h₂ : P ∧ Q → P := fun h => h.left`\r\n\r\n# Unicode:\r\n- `fun` can be written as `λ`\r\n- `=>` can be written as `↦`\r\n----\r\n- `have h₁ : P → P := λp ↦ p`\r\n- `have h₂ : P ∧ Q → P := λh ↦ h.left`":
  "",
  "# `cases` for a Conjunction\r\nHere, we introduce the `cases` tactic in an unstructured context. `cases` takes a name from the local context and either splits it into multiple goals, or deconstructs it into its parts depending on the Proposition.\\\r\n\\\r\nIn this level, `cases h` will replace `h` with its `left` and `right` parts. Try it out.":
- "",
+ "# 論理積への`cases`\r\nここでは、構造化されていない文脈での`cases`タクティクを紹介する。 `cases`はローカルコンテキストから名前を受け取り、それを複数のゴールに分割するか、命題に応じて、それをパーツに分解したりする。\r\n\r\nこのレベルでは、`cases h`は`h`を`left`の部分と`right` の部分で置き換える。やってみよう。",
  "# `assumption`\r\nIf the evidence you want is in your list of **Assumptions**, the `assumption` tactic will finish the level for you.":
  "# `assumption`\r\nもしあなたが欲しい証拠があなたの**仮定**のリストにあるなら、タクティク`assumption`はレベルを終わらせるだろう。",
  "# World's End\r\nThe home stretch, you can do it!\r\n\r\n# More tactic combinations\r\nYou can combine two tactics into a single tactic using `{tac1; tac2}`. This may be helpful when combined with a tactic like `repeat`. As an example, there may come a time in this level where the following can save you a bit of typing:\r\n```\r\nrepeat {intro; assumption}\r\n```":
@@ -306,7 +306,7 @@
  "# 要約\r\nタクティク`exact`は、あなたがゲームに答えを与える手段である。多くのレベルは複数のステップでできる。最終的な式を作る準備ができたら、タクティク`exact`を使うことになる。それがゴールにふさわしいかどうかが評価されるだろう。\r\n\r\n`exact`はどのような式でも動作し、現在のゴールとまとめようとする。このような表現の内最も単純な`:`は、ゴールの 「証拠となる」単なる名前である。より複雑な表現では、関数の抽象化や適用だけでなく、解禁済の定義や定理を利用することが多い。\r\n\r\n# エラー\r\nほとんどの序盤のレベルではタクティク`exact`と式しか使わないので、タクティクを指定し忘れることがよくある。これでエラーが出ることもある：\r\n```\r\nunknown tactic\r\n```\r\nまた、もっと曖昧なメッセージの時もある：\r\n```\r\nno goals left\r\nこれはおそらく、レベルを警告を伴って解いたか、Leanが解析エラーに遭遇したことを意味する。\r\n```\r\n今後、より良いエラーメッセージが出ることを期待しています☺\r\n\r\n### 例\r\n```\r\nオブジェクト:\r\nP : Prop\r\n仮定:\r\nh : P\r\nゴール:\r\nP\r\n```\r\n----\r\n```\r\nexact h\r\n```\r\n\r\n### 例\r\n```\r\nオブジェクト:\r\nP Q: Prop\r\n仮定:\r\nh : (P → Q) ∧ ¬Q\r\nゴール:\r\n¬P\r\n```\r\n----\r\n```\r\nexact λp ↦ and_right h (and_left h p)\r\n```",
  "# Sub-Proof\r\nIf your Goal is an implication, this tactic introduces one or more hypotheses, optionally naming and/or pattern-matching them.\r\n\r\nThe effect on a goal like `P → Q` is to add `P` as an assumption and change the Goal to `Q`. If the implication is already a part of a sub-proof, then once you show evidence for `Q`, the assumption `P` is discharged and can not be used for the rest of the proof.\r\n\r\nThis is is the interactive way of defining a function using tactics. You can think of discharging an assumption as the same as parameters being limited in scope to the function's body/definition.":
  "",
- "# So Many Cases\r\nJust keep picking the right hypothesis.": "",
+ "# So Many Cases\r\nJust keep picking the right hypothesis.": "# たくさんのケース\r\nただ、正しい仮定を選び続けるだけだ。",
  "# Snacks!\r\nWhat's a birthday party without chips and cake?\r\n# About Conditionals\r\nThis world teaches you about conditional statements. In every day sentences, you'll see such statements expressed as “if [...], then [...]” logic — “If the sky is clear at night, then we will be able to see the stars.”.\\\r\n\\\r\nThis game uses the implication arrow “ → ”. “If A, then B” is the same as “A implies B” or “`A → B`”.\\\r\n\\\r\nSo far, we've been giving our evidence and propositions real-world analogues. Doing this is a bit less desirable with conditionals as real-world evidence is often based on our understanding and not some tangible object. For example; the evidence that “If it rained, then the driveway is wet” generally doesn't come in the form of peer-reviewed physics papers. You should be thinking of the flavour text for each level as an unrefined embellishment of the symbols you're actually concerned with.\\\r\n\\\r\nThat said, at the level the flavour text works on, what would constitute evidence for a conditional statement? Well, for example; “If we have gnocchi, butter, parmesan, and black pepper, then we can cook *gnocchi cacio e pepe*”. An example of evidence for such a conditional could be a recipe with cooking instructions. You can think of the recipe as an argument explaining that the given ingredients are sufficient to be able to cook the dish.\\\r\n\\\r\nAnother example might be a safe's combination, as evidence that “I can find the hidden safe” → “I can steal the contents of the safe”. Perhaps a certification is evidence that “I won the contract” → “I will renovate the client's yard”.\\\r\n\\\r\nThe concept behind an implication, such as `A → B`, is that there exists an explicit path starting from the truth of `A`, from which you can demonstrate the truth of `B`. \\\r\n\\\r\nWhere this game abstracted the idea of `A ∧ B` into a tuple holding evidence for `A` and evidence for `B`. The way we store evidence like `A → B` is with a function that takes evidence for `A` and produces evidence for `B`.\\\r\n\\\r\n`h : A → B` reads `h` is evidence for `A → B`. While real-world analogues can be anything, the formalization used in this game will always be a function.":
  "",
  "# Show a Disjunction\r\nEvidence for `P ∨ Q` can be created in two ways. `left` changes the goal to `P` while `right` changes the goal to `Q`.":
@@ -316,7 +316,7 @@
  "# Self Contradictory\r\nAlarfil claims Lippa is coming and Cyna claims Lippa is not coming. They can't both be right.\r\n# Proposition Key:\r\n- `L` — **L**ippa is attending the party":
  "",
  "# Rinse and Repeat\r\nWhen you were writing expressions before, level 4 needed `and_left` while level 5 needed `and_right`. Tactics can incorporate an arbitrary amount of automation. In this case, because `assumption` will do a search through your assumptions for you, your proof for this level can be 100% identical to the one you used in the last level.":
- "",
+ "# 繰り返し\r\n以前、式を書いていたとき、レベル4では`and_left`が必要だったが、レベル5では`and_right`が必要だ。タクティクは任意の自動化を取り入れることができる。今回は、`assumption`があなたの代わりに仮定を検索してくれるから、このレベルの証明は、前回のレベルで使ったものと100％同じにすることができる。",
  "# Right-Hand Swap\r\nYou'll need h1.mp in order to turn evidence for Q into evidence for R":
  "",
  "# Right-Hand Swap": "",
@@ -361,7 +361,7 @@
  "# Or Elimination\r\nIf you can conclude something from `A` and you can conclude the same thing from `B`, then if you know `A ∨ B` it won't matter which of the two happens as you can still guarantee something.\r\n\r\nor_elim is also evidence:\r\n```\r\nor_elim : (P ∨ Q) → (P → R) → (Q → R) → R`\r\n```\r\n# Parameters\r\n`or_elim` has three parameters:\r\n1. takes evidence for a disjunction,\r\n2. evidence an implication on the left,\r\n3. evidence for an implication on the right.\r\n# Example\r\n`or_elim` is your first 3-parameter function.\r\n```\r\npvq: P ∨ Q\r\npr : P → R\r\nqr : Q → R\r\nhave r : R := or_elim pvq pr qr\r\n```":
  "",
  "# Old Hat\r\nYou've got this.": "",
- "# Nothing New\r\nJust use what you've been taught.": "",
+ "# Nothing New\r\nJust use what you've been taught.": "# 新しいことはない\r\n教えてもらったことを使うだけだ。",
  "# Nothing New\r\nJust use what you know. Start with `intro` to give yourself an assumption to work with":
  "",
  "# Negation is stable\r\nA nice result of this theorem is that any more than 2 negations can be simplified down to 1 or 2 negations.\r\n```\r\nnot_not_not : ¬¬¬P ↔ ¬P\r\n```":
@@ -427,7 +427,7 @@
  "# Constructor\r\nWhenever there's a clear way to create new evidence **that matches the goal**, the constructor tactic will pick that for you. This replaces the current goal with one or more goals that together complete the construction.\r\n\r\nFor example, if your goal is `P ∧ Q` then the `constructor` tactic will replace that goal with two separate subgoals. First you'll need to show evidence for `P`, then you'll need to show evidence for `Q`.":
  "# Constructor\r\n**ゴールに合致する**新たな証拠を作り出す明確な方法があればいつでも、 タクティク `constructor` がそれを選んでくれる。 これは、現在のゴールを、一緒にコンストラクトを完成させる1つ以上のゴールに置き換えるものである。\r\n\r\n 例えば、もしあなたのゴールが`P ∧ Q`ならタクティク`constructor`はゴールを別々のサブゴール2つに置き換える。あなたはまず`P`の証拠を示す必要があり、その後あなたは`Q`の証拠を示す必要がある。",
  "# Conjunction/Biconditional\r\n`cases` will deconstruct an `∧` or an `↔` into it's parts, removing the assumption and replacing it with two new assumptions.\r\n# Disjunction\r\nUsed with an `∨` cases will split the main goal, replacing it with a goal for each of the two possibilities.":
- "",
+ "# 論理積/同値\r\n`cases`は`∧`または`↔`を分解し、仮定を取り除き、2つの新しい仮定に置き換える。\r\n# 論理和\r\n`∨`の場合に使うと、メインゴールが分割され、あり得る状態2つそれぞれに対するゴールで置き換える。",
  "# Conjunction\r\n## Introduction\r\nAn “And” can be introduced with the `and_intro` theorem. Conjunctions and biconditionals can both be constructed using the angle bracket notation as well.\r\n### Examples\r\n```\r\n-- Assumptions\r\np : P\r\nq : Q\r\n-- Each new term is evidence for P ∧ Q\r\n-- Explicit Constructer, no annotations needed\r\nhave h₁ := and_intro p q\r\nhave h₂ := and_intro (left := p) (right := q)\r\n-- Implicit Constructuer, annotations based on context\r\n-- Type these angle brackets with “\\<” and “\\>”\r\nhave h₆ : P ∧ Q := ⟨p,q⟩\r\nhave h₇ := (⟨p,q⟩ : P ∧ Q)\r\n```\r\n## Elimination\r\nAn “And” like `h : P ∧ Q` can be reduced in two ways:\r\n1. Aquire evidence for `P` using `and_left h` or `h.left`\r\n2. Aquire evidence for `Q` using `and_right` or `h.right`":
  "",
  "# Cases again\r\nSimilar to last level.": "",
@@ -444,7 +444,7 @@
  "# BOSS LEVEL\r\nThis is an involved level. It doesn't require you to do anything tricky, but there are a lot of moving parts and it is easy to lose track of what you're doing.\\\r\n\\\r\nI recommend editor mode. Think about what this is asking you to prove and use `have` to give yourself any auxiliary facts that don't exist under your theorems.":
  "",
  "# BOSS LEVEL\r\nThe trick for this level is to pull out the relevant info from the assumption `h` before moving on, otherwise you'll need to re-do that work for each sub-goal.\r\n\r\nI use the `cases` tactic 5 times and for me, they're the first five tactics for this level.":
- "",
+"# BOSS LEVEL\r\nこのレベルのコツは、次に進む前に仮定`h`から関連情報を引き出すことだ。そうしないとサブゴールごとにその作業をやり直す必要がある。\r\n\r\n私はタクティク`cases`を5回使っており、私にとってそれらはこのレベルでの最初の5つのタクティクだ。",
  "# BOSS LEVEL\r\nIf you can finish this level, you've certainly mastered the `∧`. There's no deep logical tricks in this boss level, you've just got to know how to work at properly unnesting and then building the right Proposition.\\\r\n\\\r\nUsing the `have` tactic, you can break this task down into digestible chunks. The top right of the screen has a button that toggles between editor mode and typewriter mode. Editor mode is often a bit easier to work with as it allows you to enter multi-line expressions or edit earlier lines seamlessly. While in editor mode, the proof state will change depending on which line your caret is on.\r\n# Rearranging Boxes\r\nFinally, a bunch of your invites have returned with RSVPs. The mailman has delivered them in a big box. Make a list of the expected attendees so far.\r\n# Proposition Key:\r\n- A — **A**larfil is coming to the party\r\n- C — **C**yna** is coming to the party\r\n- I — **I**lyn** is coming to the party\r\n- O — **O**rin** is coming to the party\r\n- P — **P**ippin** is coming to the party\r\n- S — **S**ybeth** is coming to the party\r\n- U — **U**riel** is coming to the party":
  "# BOSS LEVEL\r\nこれがクリアできるなら,あなたは確かに`∧`をマスターしています。このボスレベルには深い論理的なトリックはありません、適切に入れ子を外し、適切な命題を構築する方法を知らなければなりません。\r\n\r\n`have`タクティクを使えば、このタスクを分解してわかりやすくすることができます。画面右上には、エディターモードとタイプライターモードを切り替えるボタンがあります。エディターモードでは、複数行の式を入力したり、前の行をシームレスに編集したりできるので、作業が少し楽になることが多いです。エディターモードでは、証明状態は、キャレットがどの行にあるかによって変化します。\r\n# 箱を並べ替える\r\nようやく、招待状の束がRSVP(お返事下さい、の意)とともに戻ってきました。郵便屋さんが大きな箱に入れて届けてくれました。これまでの参加予定者のリストを作成しましょう。\r\n# 命題キー:\r\n- A — **A**larfilがパーティーに来る\r\n- C — **C**ynaがパーティーに来る\r\n- I — **I**lynがパーティーに来る\r\n- O — **O**rinがパーティーに来る\r\n- P — **P**ippinがパーティーに来る\r\n- S — **S**ybethがパーティーに来る\r\n- U — **U**rielがパーティーに来る",
  "# BOSS LEVEL\r\nIf we summon the Kraken, then we shall assuredly perish. While that might sound ominous, consider this: if we summon the Kraken or **have icecream**, then we shall **have icecream!** or we shall perish.\r\n# Proposition Key:\r\n- I — **We have have icecream!**\r\n- K — We summon the Kraken\r\n- P — We shall assuredly perish":
