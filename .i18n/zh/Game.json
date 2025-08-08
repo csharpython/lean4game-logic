@@ -3,7 +3,7 @@
  "∧ over ∨": "",
  "∧ Tutorial: Party Invites": "∧ チュートリアル: パーティーの招待",
  "↔ Tutorial: Party Games": "",
- "→ distributes over ∧": "",
+ "→ distributes over ∧": "→は∧に関し分配的",
  "→ Tutorial: Party Snacks": "→ チュートリアル: パーティーの軽食",
  "λs ↦ false_elim (h s)": "",
  "¬¬\\\"You bought this cake\"": "",
@@ -27,8 +27,8 @@
  "assumption tries to solve the main goal by searching your the assumptions in your proof state for a hypothesis with a compatible proposition":
  "assumptionは、証明状態にある仮定を検索して、適合する命題を持つ仮説を探すことによって、主目標を解決しようとします",
  "and_intro, and_left, and_right": "",
- "and_imp 2": "",
- "and_imp": "",
+ "and_imp 2": "and_imp 2",
+ "and_imp": "and_imp",
  "and distributes over or": "",
  "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`": "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`",
  "`or_elim h₃ ... ...`": "",
@@ -49,11 +49,11 @@
  "You've got a proof that Pippin is coming to the party! Lets see if Cyna will attend as well.\r\n\r\n----\r\nA reminder that expressions work with the `have` and `exact` tactics in much the same way. You can also solve this level without `have`.\r\n```lean\r\nexact vm.left\r\n```":
  "Pippinがパーティに来るという証拠を手に入れた！Cynaも参加するか見てみましょう。\r\n\r\n----\r\n式は `have` と `exact`のタクティクではほとんど同じように動作することを忘れないでください。あなたはこのレベルを`have`を使わずに解けます。\r\n```lean\r\nexact vm.left\r\n```",
  "You're very convincing, and now Sybeth can see that if Riffin is bringing a snack, he'll be bringing it regardless of what she does.\\\r\n\\\r\nOn to the next world!\r\n\r\n----\r\n# Hint\r\nIf you're not going to use some evidence, then you don't need to name it. You can write an underscore as a placeholder. For example, my solution looked like this:\r\n```\r\nexact λ r : R ↦ ⟨λ _ : S ↦ r, λ _ : ¬S ↦ r⟩\r\n-- which can be abbreviated\r\nexact λr ↦ ⟨λ_ ↦ r, λ_ ↦ r⟩\r\n```":
- "",
+ "あなたは非常に説得力があります。そして、SybethはRiffinがスナックを持ってくるなら、彼女が何をしようが、彼は必ず持ってくることに気づきました。\r\n\r\n次のワールドへ！\r\n\r\n----\r\n# ヒント\r\nある証拠を使わない場合、その名前を書く必要はありません。プレースホルダーとしてアンダーバーを使えます。例えば、私の解法はこう見える：\r\n```\r\nexact λ r : R ↦ ⟨λ _ : S ↦ r, λ _ : ¬S ↦ r⟩\r\n-- こう略せる\r\nexact λr ↦ ⟨λ_ ↦ r, λ_ ↦ r⟩\r\n```",
  "You'll never **actually** find evidence for `False`, but evidence for `¬False` is a very simple tautology, as you would expect.\r\n\r\n----\r\nWhich Proof did you use?\r\n```\r\nexact identity\r\nexact λ(f : False) ↦ f\r\nexact λf ↦ f\r\n```":
  "",
- "You definitely have a knack for providing conditional arguments!": "",
- "Write the necessary nested function(s)!": "",
+ "You definitely have a knack for providing conditional arguments!": "あなたは条件付き命題の展開が本当に上手ですね！",
+ "Write the necessary nested function(s)!": "必要なネストされた関数を作ろう！",
  "Who is loyal, who is a spy?": "",
  "Well, done.\r\n\r\n---\r\n```\r\nexact or_elim h or_inr or_inl\r\n```": "",
  "Well reasoned": "",
@@ -61,7 +61,7 @@
  "Well Concluded!": "",
  "Use the constructor tactic": "タクティク「constructor」を使う",
  "Use the assumption tactic": "タクティク「assumption」を使う",
- "Uncertain Snacks": "",
+ "Uncertain Snacks": "不確かなスナック",
  "Three × and_intro.": "3 × and_intro",
  "This set of tactic-based levels is complete!\r\n\r\n------\r\n```\r\nintro\r\nconstructor\r\nrepeat {intro; assumption}\r\n```":
  "",
@@ -172,15 +172,15 @@
  "Exactly 2 rewrites": "",
  "Double False!": "",
  "Double False": "",
- "Distribute": "",
+ "Distribute": "分配",
  "Did you use `intro ⟨p, a⟩` this time?": "",
  "Cool. Chips and Dip!\r\n\r\n----\r\n# A Tip!\r\nIf you're writing a function with more than one parameter, you can just list the parameters. That's a shorthand for nested function declarations.\r\n```\r\nλ(p : P) ↦ λ(q : Q) ↦ h (and_intro p q)\r\n-- can be written as:\r\nλ(p : P)(q : Q) ↦ h (and_intro p q)\r\n-- Or because the propositions of p and\r\n-- q are clear from the goal:\r\nλp q ↦ h (and_intro p q)\r\n```":
- "",
- "Cool. Chips and Dip for sure!": "",
+ "クール。チップスとディップ！\r\n\r\n----\r\n# ヒント！\r\n複数のパラメーターを持つ関数を書く場合、単にパラメーターを列挙するだけで済みます。 これは、ネストされた関数宣言の省略形です。\r\n```\r\nλ(p : P) ↦ λ(q : Q) ↦ h (and_intro p q)\r\n-- こう書ける：\r\nλ(p : P)(q : Q) ↦ h (and_intro p q)\r\n-- あるいは命題pと\r\n--命題qがゴールから明らかに分かるから：\r\nλp q ↦ h (and_intro p q)\r\n```",
+ "Cool. Chips and Dip for sure!": "クール。チップスとディップは絶対！",
  "Contradiction": "",
  "Constructor": "コンストラクタ",
  "Conjunctive Iff": "",
- "Conjunction interacting with implication": "",
+ "Conjunction interacting with implication": "含意と相互作用する論理積",
  "Conjunction Implication": "",
  "Congratulations. You have evidence that your party will have cake!\r\n\r\n----\r\n1:\r\n```\r\nhave c := bakery_service p\r\nexact c\r\n```\r\n2:\r\n```\r\nexact bakery_service p\r\n```\r\n3:\r\n```\r\nexact modus_ponens bakery_service p\r\n```":
  "おめでとう。あなたのパーティーにはケーキがあるという証拠だ！\r\n\r\n----\r\n1:\r\n```\r\nhave c := bakery_service p\r\nexact c\r\n```\r\n2:\r\n```\r\nexact bakery_service p\r\n```\r\n3:\r\n```\r\nexact modus_ponens bakery_service p\r\n```",
@@ -275,7 +275,7 @@
  "# Using Only What Is Needed\r\nSybeth has left a voicemail on your answering machine. In it she says “Hello, it's Sybeth, I'm calling to confirm that Pippin is coming to the party and I am also coming to the party! See you then!”\\\r\n\\\r\nYou'd like to convince Cyna to join the party. You know that Cyna is good friends with Pippin. Constructing evidence that Pippin is attending the party might just be the key to convincing Cyna to join as well.\r\n# Proposition Key:\r\n- P — \"**P**ippin is coming to the party\"\r\n- S — \"**S**ybeth is coming to the party\"\r\n# Assumptions:\r\n- `vm : P ∧ S` — The voicemail (`vm`) is evidence that (`P ∧ S`) Pippin and Sybeth are coming to the party.\r\n# Convincing Cyna\r\nCyna is close with Pippin, but you don't know much about his friendship with Sybeth. You want only a relevant part of the voicemail. Fortunately, you know that any evidence with an `∧` has a left part and a right part. You can use this knowledge to pull evidence out of `vm`.\\\r\n\\\r\nThis can be done with either of these two methods:\r\n```\r\nhave p := and_left vm\r\nhave p := vm.left\r\n```\r\nOnce you've done this, you're very close to level 1 again where the Goal is directly in your assumptions.":
  "# 必要なものだけを使う\r\nSybethが留守番電話にボイスメールを残しています。その中で彼女はこう言っています：「もしもし、Sybethです。私もPippinもパーティに行きます！じゃあね！」\r\n\r\nあなたはCynaをパーティーに参加させたいと思います。CynaがPipinnと仲がいいのは知っています。Pippinがパーティに参加しているという証拠を作ることが、Cynaを説得する鍵になるかもしれません。\r\n# 命題キー:\r\n- P — \"**P**ippinがパーティーに来る\"\r\n- S — \"**S**ybethがパーティーに来る\"\r\n# 仮定:\r\n- `vm : P ∧ S` — ボイスメール(`vm`)は、(`P∧S`)PippinとSybethがパーティーに来るという証拠です。\r\n# シナを説得する\r\nCynaはPippinと親しいですが、Sybethとの関係についてはよく知りません。ボイスメールの関連する部分だけが必要です。幸いなことに、「∧」がつく証拠には左の部分と右の部分があることはご存じでしょう。この知識を使って、`vm`から証拠を引き出すことができます。\r\n\r\nこれはこの二つの方法のどちらかでできます：\r\n```\r\nhave p := and_left vm\r\nhave p := vm.left\r\n```\r\nこれができれば、ゴールがあなたの仮定に直接入ってくるレベル1にまた近づいたことになる。",
  "# Un-Curry\r\nIf you've got chips, then if you've got dip, then you've got a popular party snack.\\\r\n\\\r\nTherefore, if you've got chips and dip, then you've got a popular party snack!\r\n# Proposition Key:\r\n- `C` — You've got chips\r\n- `D` — You've got Dip\r\n- `S` — You've got a popular party snack":
- "",
+ "# 非・カリー\r\nチップスがある時、ディップがあるなら、人気のパーティーおやつの完成です。\r\n\r\nしたがって、チップスとティップがあれば、人気のパーティーおやつの完成です！\r\n# 命題キー:\r\n- `C` — チップスがある\r\n- `D` — ディップがある\r\n- `S` — 人気のパーティーおやつがある",
  "# Two sides to every coin\r\nYou're flipping a coin to decide which team gets to guess first in *Salad Bowl*. Heads means blue team and tails means purple team. Even though you're on the purple team, you're secretly hoping it comes up heads.\r\n# Proposition Key:\r\n- B — Blue Team goes first\r\n- P — Purple Team goes First\r\n# Unlocked `iff_mp` and `iff_mpr`\r\nFor a biconditional like `h : P ↔ Q`,\r\n1. You can extract `P → Q` using `iff_mp h` or `h.mp`. `mp` here is short of modus ponens.\r\n2. You can extra `Q → P` using `iff_mpr h` or `h.mpr`. `mpr` here is short of modus ponens reversed.":
  "",
  "# Trouble with the cake\r\nThe baker from the bakery called, expressing confusion about your cake order. While he can bake a cake with icing and sprinkles, you've requested sprinkles and icing. You attempt to convey that every cake with sprinkles and icing is **also** at the same time a cake with icing and sprinkles. The baker doesn't believe you.\\\r\n\\\r\nIf you assume an arbitrary cake that has icing and that has sprinkles, show that you also have a cake that has sprinkles and has icing!\r\n# Proposition Key:\r\n- `I` — The cake has **I**cing\r\n- `S` — The cake has **S**prinkles":
@@ -399,7 +399,7 @@
  "# In this world\r\nIn this world, you'll be introduced to negation — which is written with the “`¬`” symbol.\\\r\n\\\r\nThis operator is really just syntactic sugar. `¬P` means `P → False`. It seamlessly integrates into all the scenarios where implications are used. It's also constructed using functions (`λ...↦...`) just like any other implication.\\\r\n\\\r\nThe new interesting element for this world is `False`. What is `False`? It's a proposition — part of the set of statements that can be either true or false. Importantly, however it's defined as a proposition which always happens to be false. By sheer force of definition — there can never exist any evidence supporting the veracity of `False`.\\\r\n\\\r\nConsider a real-world analogue like “Tom is an experienced beginner” or “Tom is a married bachelor”, neither can ever be true. For there to exist evidence of either, you need to throw out definitions of the words themselves.\\\r\n\\\r\nAn interesting corollary arises: from the premise of `False`, any proposition becomes permissible. If you're allowed to speak in gobbledygook, then you can say anything!\r\n### Garbage In, Garbage out\r\nImagine you're signing a contract of utmost importance. The terms stipulate: “Once per day, you will be given a whole number greater than 0. If the number falls below 100, you must gracefully wave your left hand; if it exceeds 90, your right hand should elegantly sway. Lastly, if the number plunges below 0, you must transform into a cucumber.”\\\r\n\\\r\nOn casual scrutiny, one might naively conclude that adhering to this contract may involve turning into a cucumber. While that may seem impossible, a subtle loophole exists. By astutely arguing that the contract will never demand the impossible act of becoming a cucumber, you can effectively assure your compliance.\\\r\n\\\r\nBy signing the contract, you're agreeing that “If there appears a number that is both greater than 0 and less 0, then I will transform into a cucumber.” Your grandiose claims remain secure as they hinge on an eventuality that defies logical possibility.":
  "",
  "# Go buy chips and dip!\r\n- If you go shopping, then you'll buy chips.\r\n- If you go shopping, then you'll buy dip.\r\n- ∴ If you go shopping, you'll buy chips and dip\r\n# Proposition Key:\r\n- `C` — You buy chips\r\n- `D` — You buy dip\r\n- `S` — You go shopping":
- "",
+ "# チップスとディップを買おう！\r\n- 買い物に行けば、チップスを買うでしょう。\r\n-買い物に行けば、ディップを買うでしょう。\r\n- ∴ 買い物に行けば、チップスとディップを買うでしょう。\r\n# 命題キー:\r\n- `C` — チップスを買う\r\n- `D` — ディップを買う\r\n- `S` — 買い物に行く",
  "# Function Application/Implication Elimination\r\n`P → Q` is propostion given to functions from evidence of `P` to evidence of `Q`.\r\n# Juxtaposition\r\nJuxtaposition just means “to place next to each other,” which is what we'll do to give a parameter to a function.\r\n### Example\r\n```\r\n-- Assumptions\r\ne₁ : P\r\ne₂ : Q\r\nGoal:\r\nP ∧ Q\r\n```\r\n----\r\n```\r\nexact (and_intro e₁ e₂)\r\n```\r\n### Example\r\n```\r\n-- Assumptions\r\na : A\r\nh₁ : A → B\r\n-- Goal\r\nB\r\n```\r\n---\r\n```\r\nexact (h₁ a)\r\n```\r\nTakes `h₁` and applies `a` to it.":
  "# 関数適用/含意除去\r\n`P → Q` は `P` の証拠から `Q` の証拠への関数に与えられる命題である。\r\n# Juxtaposition\r\nJuxtaposition（並置）とは「隣同士に置く」という意味であり、これは関数にパラメータを与えるために行うことである。\r\n### 例\r\n```\r\n-- 仮定\r\ne₁ : P\r\ne₂ : Q\r\n-- ゴール:\r\nP ∧ Q\r\n```\r\n----\r\n```\r\nexact (and_intro e₁ e₂)\r\n```\r\n### 例\r\n```\r\n-- 仮定\r\na : A\r\nh₁ : A → B\r\n-- ゴール\r\nB\r\n```\r\n---\r\n```\r\nexact (h₁ a)\r\n```\r\n`h₁`を受け取り、それに`a`を適用する。",
  "# Follow the Graph Backwards\r\n$$\r\n\\begin{CD}\r\n  P  @>{h₁}>> Q       @>{h₂}>> R \\\\\r\n  @.         @VV{h₃}V           \\\\\r\n  S  @>>{h₄}> T       @>>{h₅}> U\r\n\\end{CD}\r\n$$":
@@ -417,7 +417,7 @@
  "# Definitely Not\r\nYour cake order definitely has sprinkles, which means it's **not** missing sprinkles and loaded with chocolate chips\r\n# Proposition Key:\r\n- `C` — The cake is loaded with chocolate chips\r\n- `S` — The cake is topped with sprinkles":
  "",
  "# Curry\r\nIf you've got chips and dip, then you've got a popular party snack! This is undeniable.\\\r\n\\\r\nTherefore if you've got chips, then if you've got dip, then you've got a popular party snack.\r\n# Proposition Key:\r\n- `C` — You've got chips\r\n- `D` — You've got Dip\r\n- `S` — You've got a popular party snack":
- "",
+ "# カリー\r\nチップスとディップがあれば、人気のパーティーおやつの完成です！これは疑いようのない事実です。\r\n\r\nしたがって、チップスがある時、ディップがあるなら、人気のパーティーおやつの完成です。\r\n# 命題キー:\r\n- `C` — チップスがある\r\n- `D` — ディップがある\r\n- `S` — 人気のパーティーおやつがある",
  "# Coupled Conditionals\r\nSybeth and Alarfil are a couple. In effect, this means that if Sybeth is playing a party game, then Alarfil is playing too and vice versa. Therefore Sybeth is playing Charades if and only if Alarfil playing.\r\n# Proposition Key:\r\n- J — Alarfil is playing Charades\r\n- S — Sybeth is playing Charades\r\n# Unlocked `↔ intro`\r\nAssuming `e₁ : P → Q` and `e₂ : Q → P`, you can introduce a biconditional with `have h := iff_intro e₁ e₂`, though the anonymous constructor syntax works just like it does for conjunctions: `have h : P ↔ Q := ⟨e₁, e₂⟩`":
  "",
  "# Contradiction\r\nThis level introduces a relatively powerful tactic. Contradiction is a finishing tactic that will look through your assumptions and discharge some of the more obvious contradictions in order to solve any goal.\\\r\n\\\r\nexamples:\r\n  1. `h : False` says `h` is evidence for `False` which is a contradiction\r\n  2. `h₁ : P` and `h₂ : ¬P` says that P is true and not true at the same time. This is also a contradiction.":
@@ -438,7 +438,7 @@
  "# BOSS Level\r\n\"Is it possible that if this is the cake you bought, then it's gonna taste horrible?\"\\\r\n\"I'm certain that's not possible!\"\\\r\n\"Oh, so what you're saying is that you have evidence that this is not not the cake you bought.\"\r\n# Proposition Key:\r\n- `B` — You bought this cake\r\n- `C` — The cake tastes horrible":
  "",
  "# BOSS LEVEL!!!\r\n# Uncertain Snacks\r\nSybeth wants to know whether Riffin will still bring a snack, regardless of whether she brings one herself or not.\\\r\n\\\r\nShe's asked you for evidence that:\r\n- **If** Riffin is bringing a snack **then**\r\n  1. Her bringing a snack **implies** Riffin is bringing a snack\r\n  2. Her not bringing a snack **implies** Riffin is bringing a snack\r\n\r\nThat's a bit convoluted, but you should be able to produce some evidence of this!\r\n# Proposition Key:\r\n- `R` — Riffin is bringing a snack\r\n- `S` — Sybeth is bringing a snack":
- "",
+  "# ボスレベル！！！\r\n# 不確かなスナック\r\nSybeth は、自分がスナックを持ってくるかどうかに関わらず、Riffinがスナックを持ってくるかどうか知りたいです。\r\n\r\n彼女はあなたに証拠を求めました：\r\n- **もし**Riffinがスナックを持ってくる**場合**、\r\n  1. 彼女がスナックを持ってくることはRiffinがスナックを持ってくることを**含意**します\r\n 2. 彼女がスナックを持ってこないことはRiffinがスナックを持ってくることを**含意**します\r\n\r\nそれは少し複雑ですが、その証拠を示せるはずです！\r\n# 命題キー:\r\n- `R` — Riffinはスナックを持ってくる\r\n- `S` — Sybethはスナックを持ってくる",
  "# BOSS LEVEL\r\nThis is an involved level. Tactics can be especially helpful in that much of the bookkeeping is done on your behalf. Good luck.\r\n\r\nThere are no restrictions this level. Use everything you've learned.":
  "",
  "# BOSS LEVEL\r\nThis is an involved level. It doesn't require you to do anything tricky, but there are a lot of moving parts and it is easy to lose track of what you're doing.\\\r\n\\\r\nI recommend editor mode. Think about what this is asking you to prove and use `have` to give yourself any auxiliary facts that don't exist under your theorems.":
