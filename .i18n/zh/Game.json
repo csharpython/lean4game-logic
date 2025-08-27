@@ -1,5 +1,5 @@
 {"∨ over ∧": "",
- "∨ Tutorial: The Kraken": "",
+ "∨ Tutorial: The Kraken": "∨ チュートリアル: クラーケン",
  "∧ over ∨": "",
  "∧ Tutorial: Party Invites": "∧ チュートリアル: パーティーの招待",
  "↔ Tutorial: Party Games": "",
@@ -31,7 +31,7 @@
  "and_imp": "and_imp",
  "and distributes over or": "",
  "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`": "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`",
- "`or_elim h₃ ... ...`": "",
+ "`or_elim h₃ ... ...`": "`or_elim h₃ ... ...`",
  "`identity`": "",
  "`exact h.right`": "",
  "`cases h3`": "",
@@ -64,9 +64,9 @@
  "Uncertain Snacks": "不確かなスナック",
  "Three × and_intro.": "3 × and_intro",
  "This set of tactic-based levels is complete!\r\n\r\n------\r\n```\r\nintro\r\nconstructor\r\nrepeat {intro; assumption}\r\n```":
- "",
+ "このタクティクベースのレベルセット、完了！\r\n\r\n------\r\n```\r\nintro\r\nconstructor\r\nrepeat {intro; assumption}\r\n```",
  "This says nothing about whether or not oranges are a vegetable. All we know is that at least one of `O` or `S` must be true.":
- "",
+ "これはオレンジが野菜かどうかについて何も言っていません。私たちが知っているのは、`O`と`S`の少なくとも1つが真であるということです。",
  "This one takes a while": "",
  "This joke is a reach, I know, but my answer in this level kinda spells `ahaa` — `λa ↦ h a a`. \\\r\n\\\r\nOkay, okay. Let's proceed.":
  "",
@@ -95,7 +95,7 @@
  "Self Contradictory 2": "",
  "Self Contradictory": "",
  "Rinse and Repeat": "繰り返し",
- "Right Evidence": "",
+ "Right Evidence": "右の証拠",
  "Riffin is bringing a unicorn snack": "Riffinがユニコーンのスナックを持ってくる",
  "Riffin Snacks": "Riffinのスナック",
  "Rewriting": "",
@@ -111,10 +111,10 @@
  "Practise Makes Perfect": "習うより慣れろ",
  "Phew, that makes perfect sense now.": "",
  "P and Q implies P": "「PかつQ」はPを包含する",
- "Or is Commutative": "",
- "Or Introduction Right": "",
- "Or Introduction Left": "",
- "Or Elimination": "",
+ "Or is Commutative": "「または」は可換",
+ "Or Introduction Right": "「または」の導入則・右",
+ "Or Introduction Left": "「または」の導入則・左",
+ "Or Elimination": "「または」の除去則",
  "Onward and upward\r\n\r\n----\r\n```\r\nexact iff_intro hsj hjs\r\n```\r\n---\r\n```\r\nexact ⟨hsj, hjs⟩\r\n```":
  "",
  "Once you've gathered evidence confirming that the object is a cake, the game becomes straightforward. The show's appeal lies not in the simple truism that a cake is a cake but rather in the contestants' skill to compile credible evidence. Typically, the most compelling evidence is presented by the host when he cuts into the object, unveiling its contents.\r\n\r\n----\r\n# A Tip\r\nMoreover, since the goal already specifies the expected type of evidence, you can streamline your function without explicitly writing out the assumed proposition.\r\n```\r\nexact λ(h : C) ↦ h\r\n-- can be written\r\nexact λh ↦ h\r\n```":
@@ -141,7 +141,7 @@
  "Mix and Match": "混ぜて合わせて",
  "Might it possibly still be filled with chocolate chips? That sounds absolutely delightful!":
  "",
- "Left Evidence": "",
+ "Left Evidence": "左の証拠",
  "Lean intro to Logic": "",
  "Just like before, you need to keep in mind that `¬P` is defined as `P → False`.\\\r\n\\\r\n∴ `¬False` is actually asking for `False → False`":
  "",
@@ -189,7 +189,7 @@
  "Congratulations, not only have you started your todo list, you've learned how to exhibit the list as evidence that you've started planning the party.":
  "おめでとう、あなたはTodoリストを始めただけでなく、「あなたはパーティーの計画を立て始めた」という証拠としてのリストを示す方法を学びました。",
  "Commutativity of “`∨`”": "",
- "Commutativity of \"`∨`\"": "",
+ "Commutativity of \"`∨`\"": "\"`∨`\"の可換性",
  "Common! Cake is Cake": "共通！ケーキはケーキ",
  "Combining your new tactics": "新しいタクティクを組み合わせる",
  "Change the goal to `False`. This is only helpful when there are assumptions which are in some way contradictory.\r\n### Example\r\n```\r\nAssumptions\r\nh : P ∧ ¬P\r\nGoal: Q\r\n```\r\nI cannot show evidence for `Q` directly, but because `False → Q` is trivially true (False implies anything), I can use the tactic `exfalso` which changes the Goal:\r\n```\r\nAssumptions\r\nh : P ∧ ¬P\r\nGoal: Q\r\n```\r\nAfter which `exact h.right r.left` meets the current goal.\r\n### Apply\r\n`exfalso` is the same as `apply false_elim`.\r\n∴ to show `Q` by `False → Q`, it suffices to show `False`.":
@@ -208,7 +208,7 @@
  "Apply": "適用",
  "Another One": "もう一つ",
  "And Tactic Boss": "「かつ」　タクティク　ボス",
- "And Introduction": "「かつ」の入門",
+ "And Introduction": "「かつ」の導入則",
  "And Elimination 2": "「かつ」の除去則 2",
  "And Elimination": "「かつ」の除去則",
  "Amazing! You've mastered \"AND\".\r\n\r\n---\r\n```\r\n-- 3/4 of the things you need are one step away\r\nhave psa := h.left\r\n\r\n-- Evidence for C takes some digging\r\nhave c := h.right.right.left.left\r\n\r\n-- build C ∧ P ∧ S\r\nhave cps := and_intro c psa.left\r\n\r\n-- exibit A ∧ C ∧ P ∧ S\r\nexact and_intro psa.right cps\r\n```":
@@ -305,7 +305,7 @@
  "# Summary\r\nThe `exact` tactic is a means through which you give the game your answer. Many levels can be done in multiple steps. You'll use the `exact` tactic when you're ready to create the final expression. It will be evaluated to see whether it matches the goal.\r\n\r\n`exact` will work with any expression and attempt to unify it with the current goal. The simplest such expression is just a name that — `:` — “is evidence for” the goal. More complicated expressions often make use of unlocked definitions and theorems as well as function abstraction and application.\r\n\r\n# Errors\r\nBecause most of the starting levels use only the `exact` tactic and an expression, it's common to forget to specify the tactic. Sometimes this raises the error:\r\n```\r\nunknown tactic\r\n```\r\nand other times the much more ambiguous message:\r\n```\r\nno goals left\r\nThis probably means you solved the level with warnings or Lean encountered a parsing error.\r\n```\r\nHopefully we'll have better error messages in the future ☺\r\n\r\n### Example\r\n```\r\nObjects:\r\nP : Prop\r\nAssumptions:\r\nh : P\r\nGoal:\r\nP\r\n```\r\n----\r\n```\r\nexact h\r\n```\r\n\r\n### Example\r\n```\r\nObjects:\r\nP Q: Prop\r\nAssumptions:\r\nh : (P → Q) ∧ ¬Q\r\nGoal:\r\n¬P\r\n```\r\n----\r\n```\r\nexact λp ↦ and_right h (and_left h p)\r\n```":
  "# 要約\r\nタクティク`exact`は、あなたがゲームに答えを与える手段である。多くのレベルは複数のステップでできる。最終的な式を作る準備ができたら、タクティク`exact`を使うことになる。それがゴールにふさわしいかどうかが評価されるだろう。\r\n\r\n`exact`はどのような式でも動作し、現在のゴールとまとめようとする。このような表現の内最も単純な`:`は、ゴールの 「証拠となる」単なる名前である。より複雑な表現では、関数の抽象化や適用だけでなく、解禁済の定義や定理を利用することが多い。\r\n\r\n# エラー\r\nほとんどの序盤のレベルではタクティク`exact`と式しか使わないので、タクティクを指定し忘れることがよくある。これでエラーが出ることもある：\r\n```\r\nunknown tactic\r\n```\r\nまた、もっと曖昧なメッセージの時もある：\r\n```\r\nno goals left\r\nこれはおそらく、レベルを警告を伴って解いたか、Leanが解析エラーに遭遇したことを意味する。\r\n```\r\n今後、より良いエラーメッセージが出ることを期待しています☺\r\n\r\n### 例\r\n```\r\nオブジェクト:\r\nP : Prop\r\n仮定:\r\nh : P\r\nゴール:\r\nP\r\n```\r\n----\r\n```\r\nexact h\r\n```\r\n\r\n### 例\r\n```\r\nオブジェクト:\r\nP Q: Prop\r\n仮定:\r\nh : (P → Q) ∧ ¬Q\r\nゴール:\r\n¬P\r\n```\r\n----\r\n```\r\nexact λp ↦ and_right h (and_left h p)\r\n```",
  "# Sub-Proof\r\nIf your Goal is an implication, this tactic introduces one or more hypotheses, optionally naming and/or pattern-matching them.\r\n\r\nThe effect on a goal like `P → Q` is to add `P` as an assumption and change the Goal to `Q`. If the implication is already a part of a sub-proof, then once you show evidence for `Q`, the assumption `P` is discharged and can not be used for the rest of the proof.\r\n\r\nThis is is the interactive way of defining a function using tactics. You can think of discharging an assumption as the same as parameters being limited in scope to the function's body/definition.":
- "",
+ "# サブ証明\r\nあなたのゴールが含意なら、このタクティクは1つ以上の仮定を提示し、必要に応じてそれらを名付けたり、パターンマッチングを行ったりする。\r\n\r\n`P → Q`のようなゴールに対する効果は、`P`を仮定に加え、ゴールに`Q`を加えることだ。その含意がサブ証明の一部である場合、`Q`の証拠を示したら、仮定`P`は破棄され、証明の残りの部分では使えない。\r\n\r\nこれは、タクティクで関数を定義するインタラクティブな方法だ。仮定を破棄することは、引数が関数の本体/定義内にスコープが制限されることと同じだと考えることができる。",
  "# So Many Cases\r\nJust keep picking the right hypothesis.": "# たくさんのケース\r\nただ、正しい仮定を選び続けるだけだ。",
  "# Snacks!\r\nWhat's a birthday party without chips and cake?\r\n# About Conditionals\r\nThis world teaches you about conditional statements. In every day sentences, you'll see such statements expressed as “if [...], then [...]” logic — “If the sky is clear at night, then we will be able to see the stars.”.\\\r\n\\\r\nThis game uses the implication arrow “ → ”. “If A, then B” is the same as “A implies B” or “`A → B`”.\\\r\n\\\r\nSo far, we've been giving our evidence and propositions real-world analogues. Doing this is a bit less desirable with conditionals as real-world evidence is often based on our understanding and not some tangible object. For example; the evidence that “If it rained, then the driveway is wet” generally doesn't come in the form of peer-reviewed physics papers. You should be thinking of the flavour text for each level as an unrefined embellishment of the symbols you're actually concerned with.\\\r\n\\\r\nThat said, at the level the flavour text works on, what would constitute evidence for a conditional statement? Well, for example; “If we have gnocchi, butter, parmesan, and black pepper, then we can cook *gnocchi cacio e pepe*”. An example of evidence for such a conditional could be a recipe with cooking instructions. You can think of the recipe as an argument explaining that the given ingredients are sufficient to be able to cook the dish.\\\r\n\\\r\nAnother example might be a safe's combination, as evidence that “I can find the hidden safe” → “I can steal the contents of the safe”. Perhaps a certification is evidence that “I won the contract” → “I will renovate the client's yard”.\\\r\n\\\r\nThe concept behind an implication, such as `A → B`, is that there exists an explicit path starting from the truth of `A`, from which you can demonstrate the truth of `B`. \\\r\n\\\r\nWhere this game abstracted the idea of `A ∧ B` into a tuple holding evidence for `A` and evidence for `B`. The way we store evidence like `A → B` is with a function that takes evidence for `A` and produces evidence for `B`.\\\r\n\\\r\n`h : A → B` reads `h` is evidence for `A → B`. While real-world analogues can be anything, the formalization used in this game will always be a function.":
  "# おやつ！\r\nポテチやケーキがない誕生日パーティーなんてありえません。\r\n# 条件について\r\nこのワールドは条件付き命題について教えてくれます。日常的な文章では、「もし［...］なら［...］」というロジックとして表現されます。 — 「もし夜空が晴れているなら、星が見える。」\r\n\r\nこのゲームでは 含意の矢“ → ”を使います。 「もしAならB」は「AはBを含意する」または「`A→B`」と同じです。\r\n\r\nこれまでのところ、私たちは証拠と命題に現実世界の類似性を与えてきました。現実世界の証拠は、目に見えるものではなく、私たちの理解に基づいていることが多いためです。例えば：「もし雨が降ったなら、車道は濡れている」という証拠は一般的に、査読を受けた物理学の論文という形では出てきません。各レベルのフレーバーテキストは、あなたが実際に関心を持っている記号の洗練されていない装飾として考えるべきです。\r\n\r\nとはいえ、フレーバーテキストが働いているレベルでは、何が条件付き命題の証拠になるのでしょうか？ 例えば：「ニョッキ、バター、パルメザンチーズ、黒コショウがあれば、*カチョエペペ*を作れる」。 このような条件に対する証拠の例として、調理法が書かれたレシピが挙げられます。レシピは、与えられた材料がその料理を作るのに充分であることを説明する根拠と考えられます。\r\n\r\n他の例としては、金庫の暗証番号が「私は隠し金庫を見つけられる」→「私は金庫の中身を盗める」という証拠になるかもしれません。おそらく証明書は、「契約を勝ち取った」→「顧客の庭を改修する」という証拠なのでしょう。\r\n\r\n`A → B`のような含意は、事実`A`から始め、事実`B`を証明できる明示的な経路が存在するという概念です。 \r\n\r\nこのゲームでは、「A∧B」という考えを、「A」の証拠と「B」の証拠を保持するタプルに抽象化しました。`A → B`のような証拠を保存する方法は、`A`の証拠を受け取り、`B`の証拠を生成する関数です。\r\n\r\n`h : A → B`は「`h`は`A → B`の証拠である」と読みます。実世界の類似物は何でもあり得ますが、このゲームで使われる形式化は常に関数です。",
@@ -347,19 +347,19 @@
  "# Pattern matching tip\r\nYou can solve this level using the knowledge you've aquired so far. If you've used a language with destructuring or pattern matching before, then you can introduce and pattern-match in one step with `intro ⟨nq, p⟩`. Doing so means you won't need the `cases` tactic for this level.":
  "",
  "# Party Games\r\nHere's the deal. Ilyn and Cyna both said they're bringing board games and you're sure at least one of them is going to make it. So there's definitely board games at the party!\r\n# Proposition Key:\r\n- `B` — There will be boardgames at the party\r\n- `C` — Cyna is coming to the party\r\n- `I` — Ilyn is coming to the party\r\n# Or Elimination\r\nIf you can conclude something from `A` and you can conclude the same thing from `B`, then if you know `A ∨ B` it won't matter which of the two happens as you can still guarantee something.\r\n# You've unlocked `or_elim`\r\n`or_elim` has three parameters:\r\n1. takes evidence for a disjunction,\r\n2. evidence an implication on the left,\r\n3. evidence for an implication on the right.\r\n\r\n`or_elim` is your first 3-parameter function. The associated proposition is `or_elim : (P ∨ Q) → (P → R) → (Q → R) → R`.\r\n```\r\npvq: P ∨ Q\r\npr : P → R\r\nqr : Q → R\r\nhave r : R := or_elim pvq pr qr\r\n```":
- "",
+ "# パーティーゲーム\r\nこうしよう。 IlynもCynaもボードゲームを持ってくると言っていて、あなたはどちらか一人が必ず来ると信じています。じゃあパーティーには確かにボードゲームがあるよ！\r\n# 命題キー:\r\n- `B` — パーティーにはボードゲームがある\r\n- `C` — Cynaはパーティーに来る\r\n- `I` — Ilynはパーティーに来る\r\n# 「または」の除去\r\nもし`A`から何かを結論付けられ、`B`からも同じことを導け、そして`A ∨ B`を知っているなら、そのどちらが起きるかにかかわらず同じことを導けます。\r\n# `or_elim`を解禁した\r\n`or_elim`は3つの引数があります:\r\n1. 排他的論理和の証拠を取り、\r\n2. 左側の含意の証拠を取り、\r\n3. 右側の含意の証拠を取ります。\r\n\r\n`or_elim`はあなたの初めての3引数関数です。関連付けられた命題は`or_elim : (P ∨ Q) → (P → R) → (Q → R) → R`.\r\n```\r\npvq: P ∨ Q\r\npr : P → R\r\nqr : Q → R\r\nhave r : R := or_elim pvq pr qr\r\n```",
  "# Party Games\r\nA soirée requires a diligent and clear-headed host if the guests are to have fun. It's your job to ensure everybody is having a good time. Let the games begin!\r\n\r\n# Propositional Equivalence\r\n## Biconditional: If and only if\r\nThe `↔` operator doesn't introduce anything new. `P ↔ Q` can be constructed whenever evidence for both `P → Q` and `Q → P` is available. In general, if `h₁` and `h₂` are evidence as follows:\r\n```\r\nh₁ : P ↔ Q\r\nh₂ : (P → Q) ∧ (Q → P)\r\n```\r\nThen `h₁` and `h₂` have roughly the same capabilities. Also, proof of either P or Q or ¬P or ¬Q, immediately translates to the same proof for the logically equivalent proposition. The following levels will explain the details.\\\r\n\\\r\nThe main new idea introduced in this tutorial world is the `rw` tactic. The *rewrite* tactic offers a principled way to alter the current goal or available hypotheses of your current proof state.":
  "",
  "# Or Introduction Right\r\nYou know that skittles are super colourful. Which means that either sprinkles are super colourful or skittles are super colourful.\r\n# Proposition Key:\r\n- `K` — sprinkles are super colourful\r\n- `S` — skittles are super colourful\r\n# New unlock\r\nYou've just unlocked `or_inr`. It turns evidence for the righthand of an `∨` proposition into a disjunction.":
- "",
+ "# 「または」の導入則・右\r\nあなたは、スキットルズがすごくカラフルであることを知っています。つまり、スプリンクルがすごくカラフルであるか、スキットルズがすごくカラフルであるということです。\r\n# 命題キー:\r\n- `K` — スプリンクルはすごくカラフルである\r\n- `S` — スキットルズはすごくカラフルである\r\n# 新機能の解禁\r\n`or_inr`を解禁しました。それは、`∨`命題の右辺の証拠を、論理和に変換します。",
  "# Or Introduction Right\r\nTurns evidence for the righthand of an `∨` proposition into a disjunction. The context must supply what the lefthand side of the disjunction is.\r\n```\r\n-- Objects\r\nP Q : Prop\r\n-- Assumptions\r\nq : Q\r\n```\r\nallows:\r\n```\r\nhave h : P ∨ Q := or_inr q\r\nhave h := (or_inl q : P ∨ Q)\r\nhave h := show P ∨ Q from or_inl q\r\n```\r\n\"":
- "",
+ "# 「または」の導入則・右\r\n`∨`命題の右辺の証拠を、論理和に変換する。文脈は、論理和の左辺が何を指すか明確にしなければならない。\r\n```\r\n-- オブジェクト\r\nP Q : Prop\r\n-- 仮定\r\nq : Q\r\n```\r\n許可される:\r\n```\r\nhave h : P ∨ Q := or_inr q\r\nhave h := (or_inr q : P ∨ Q)\r\nhave h := show P ∨ Q from or_inr q\r\n",
  "# Or Introduction Left\r\nYou know that skittles are super colourful. Which means that either skittles are super colourful or oranges are a vegetable.\r\n# Proposition Key:\r\n- `O` — Oranges are a vegetable\r\n- `S` — skittles are super colourful\r\n# New unlock\r\nYou've just unlocked `or_inl`. It turns evidence for the lefthand of an `∨` proposition into a disjunction.":
- "",
+ "# 「または」の導入則・左\r\nあなたは、スキットルズがすごくカラフルであることを知っています。つまり、スキットルズがすごくカラフルであるか、オレンジは野菜であるということです。\r\n# 命題キー:\r\n- `O` — オレンジは野菜である\r\n- `S` — スキットルズはすごくカラフルである\r\n# 新機能の解禁\r\n`or_inl`を解禁しました。それは、`∨`命題の左辺の証拠を、論理和に変換します。",
  "# Or Introduction Left\r\nTurns evidence for the lefthand of an `∨` proposition into a disjunction. The context must supply what the righthand side of the disjunction is.\r\n```\r\n-- Objects\r\nP Q : Prop\r\n-- Assumptions\r\np : P\r\n```\r\nallows:\r\n```\r\nhave h : P ∨ Q := or_inl p\r\nhave h := (or_inl p : P ∨ Q)\r\nhave h := show P ∨ Q from or_inl p\r\n```":
- "",
+ "# 「または」の導入則・左\r\n`∨`命題の左辺の証拠を、論理和に変換する。文脈は、論理和の右辺が何を指すか明確にしなければならない。\r\n```\r\n-- オブジェクト\r\nP Q : Prop\r\n-- 仮定\r\np : P\r\n```\r\n許可される:\r\n```\r\nhave h : P ∨ Q := or_inl p\r\nhave h := (or_inl p : P ∨ Q)\r\nhave h := show P ∨ Q from or_inl p\r\n",
  "# Or Elimination\r\nIf you can conclude something from `A` and you can conclude the same thing from `B`, then if you know `A ∨ B` it won't matter which of the two happens as you can still guarantee something.\r\n\r\nor_elim is also evidence:\r\n```\r\nor_elim : (P ∨ Q) → (P → R) → (Q → R) → R`\r\n```\r\n# Parameters\r\n`or_elim` has three parameters:\r\n1. takes evidence for a disjunction,\r\n2. evidence an implication on the left,\r\n3. evidence for an implication on the right.\r\n# Example\r\n`or_elim` is your first 3-parameter function.\r\n```\r\npvq: P ∨ Q\r\npr : P → R\r\nqr : Q → R\r\nhave r : R := or_elim pvq pr qr\r\n```":
- "",
+ "# 「または」の除去\r\nもし`A`から何かを結論付けられ、`B`からも同じことを導け、そして`A ∨ B`を知っているなら、そのどちらが起きるかにかかわらず同じことを導ける。\r\nor_elimは証拠でもある:`\r\nor_elim : (P ∨ Q) → (P → R) → (Q → R) → R`\r\n`\r\n # 引数\r\n`or_elim`は3つの引数がある:\r\n1. 排他的論理和の証拠を取り、\r\n2. 左側の含意の証拠を取り、\r\n3. 右側の含意の証拠を取る。\r\n\r\n# 例\r\n`or_elim`はあなたの初めての3引数関数だ。関連付けられた命題は`or_elim : (P ∨ Q) → (P → R) → (Q → R) → R`.\r\n```\r\npvq: P ∨ Q\r\npr : P → R\r\nqr : Q → R\r\nhave r : R := or_elim pvq pr qr\r\n```",
  "# Old Hat\r\nYou've got this.": "",
  "# Nothing New\r\nJust use what you've been taught.": "# 新しいことはない\r\n教えてもらったことを使うだけだ。",
  "# Nothing New\r\nJust use what you know. Start with `intro` to give yourself an assumption to work with":
@@ -387,7 +387,7 @@
  "",
  "# Keep it up": "# 頑張ってください",
  "# It suffices to show\r\nTo prove `Q` by `P → Q`, it suffices to show `P`.\r\n### More Generally\r\nTo prove `Q` by `P₁ → P₂ → P₃ → ... → Q`, it suffices to show `P₁, P₂, P₃, ...`. One way to convince yourself this is true is to prove that `(P₁ → P₂ → Q) → (P₁ ∧ P₂ → Q)` and convince yourself there exists a procedure for any `(P₁ → P₂ → ... → Q) → (P₁ ∧ P₂ ∧ ... → Q)`\r\n### In Practice\r\nThe `apply` tactic returns as many subgoals as the number of premises that have not been fixed by the Goal.\r\n### Example:\r\nIf you have:\r\n```\r\nAssumptions:\r\nh : P → Q\r\nGoal : Q\r\n```\r\nthen `apply h` will change your proof state to:\r\n```\r\nAssumptions:\r\nh : P → Q\r\nGoal : P\r\n```":
- "",
+ "# 以下を示せばよい\r\n`P → Q`で`Q`を証明するには、`P`を示せば十分だ。\r\n### より一般に\r\n`P₁ → P₂ → P₃ → ... → Q`で`Q`を証明するには、`P₁, P₂, P₃, ...`を示せば十分だ。この主張が正しいことを自分自身に納得させる一つの方法は、`(P₁ → P₂ → Q) → (P₁ ∧ P₂ → Q)`を証明し任意の `(P₁ → P₂ → ... → Q) → (P₁ ∧ P₂ ∧ ... → Q)` に対して、そのような手順が存在することを自分自身に納得させることだ。\r\n### 実践において\r\nタクティク`apply`はゴールによって固定されていない前提の数だけ、サブゴールを作る。\r\n### 例:\r\nこんな状況なら：\r\n```\r\n仮定:\r\nh : P → Q\r\nゴール : Q\r\n```\r\nその時、`apply h`すると証明状態がこう変わる：\r\n```\r\n仮定:\r\nh : P → Q\r\nゴール : P\r\n```",
  "# Is it Cake!?\r\nThere's a show on TV about cake. It asks bakers to distinguish between every-day objects and cakes. This seems silly, because a cake is a cake.\r\n# Proposition Key:\r\n- `C` — This object is a Cake\r\n# Implication “ → ”\r\nYou'll notice that this time you don't have any assumptions. Fortunately, `C → C` is a tautology which means you can create an expression for the goal without any assumptions.\\\r\n\\\r\nIn this game, when you need to show an implication, you write a function. Creating a function requires an assumption and an expression. The assumption is introduced with two parts: `(n : P)` where `n` is any name of your choosing and the `P` is a well formed proposition.\\\r\n\\\r\nIt looks like this:\r\n```\r\nfun <name> : <Prop> => <expr>\r\nλ <name> : <Prop> ↦ <expr>\r\n```\r\nOften, when you're writting a function, the game will already know what proposition it's expecting. In such cases, the `<Prop>` becomes an optional part of the function.\r\n\r\n# A hint\r\nJust fill in the `<expr>` below:\r\n```\r\n-- Assuming h is evidence for C,\r\n-- write an expression for evidence of C\r\nexact λ h : C ↦ <expr>\r\n```":
  "# ケーキ！？\r\nテレビでケーキの番組をやっているんだ。日常品とケーキを区別することをパン職人に求めているんだ。ケーキはケーキなのだから、これは馬鹿げているよ。\r\n# 命題キー:\r\n- `C` — これはケーキだ\r\n# 含意 “ → ”\r\n今回、仮定が何もないことに気づくでしょう。幸いなことに、`C → C`はトートロジーなので、何の仮定もなしにゴールの式を作ることができます。\r\n\r\nこのゲームでは、あなたは含意を示したいとき、あなたは関数を書きます。関数を作るには仮定と式が必要です。仮定は2つの部分で導入されます：`(n : P)`ここで、`n`はあなたが選んだ任意の名前で、`P`はうまく形成された命題です。\r\n\r\nそれはこのように見えます：\r\n```\r\nfun <name> : <Prop> => <expr>\r\nλ <name> : <Prop> ↦ <expr>\r\n```\r\n多くの場合、関数を書いているとき、ゲームはすでにどのような命題を期待しているかを知っています。このようなケースでは、`<Prop>`は関数の必須でない部分になります。\r\n\r\n# ヒント\r\n以下の `<expr>`を埋めてください：\r\n```\r\n-- 仮定hはCの証拠です、\r\n-- Cの証拠となる式を書きましょう\r\nexact λ h : C ↦ <expr>\r\n```",
  "# Is Riffin bringing something?\r\nRiffin is an artsy, but rather eccentric friend of yours.\\\r\n\\\r\nEver since you asked Riffin to bring something to your party, he's been sending you rather cryptic emails. Initially, these emails seemed to have nothing to do with the party. However, after receiving the 5th email, you believe you might be able to use them to create evidence that Riffin is bringing something to the party.\\\r\n\\\r\nThese are the emails you received:\r\n1. If you're planning a party then the quest has begun\r\n2. If the quest has begin then the road to victory is long and winding\r\n3. If the quest has begun then it's time to get serious\r\n4. If the starting gun has fired then it's time to get serious\r\n5. If it's time to get serious then I'll bring a unicorn snack to the party\r\n\r\nYou still have your todo list as evidence that you're planning a party. Will it be enough?\r\n# Proposition Key:\r\n- `P` — You're **P**lanning a party\r\n- `Q` — The **Q**uest has begun\r\n- `R` — The **R**oad to victory is long and winding\r\n- `S` — The **S**tarting gun has fired\r\n- `T` — It's **T**ime to get serious\r\n- `U` — Riffin is bringing a **U**nicorn snack\r\n# Evidence\r\nSometimes visuals can make a logical argument much easier to digest. Here is a diagram you've drawn depicting Riffin's notes so far.\r\n$$\r\n\\begin{CD}\r\n  P  @>{h₁}>> Q       @>{h₂}>> R \\\\\r\n  @.         @VV{h₃}V           \\\\\r\n  S  @>>{h₄}> T       @>>{h₅}> U\r\n\\end{CD}\r\n$$\r\n# Reminder\r\nThe Precedence definition page explains that function application is left-associative. So these 2 are the same:\r\n- `h₁ h₂ h₃ h₄ h₅`\r\n- `((((h₁ h₂) h₃) h₄) h₅)`":
