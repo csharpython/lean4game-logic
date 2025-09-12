@@ -1,6 +1,6 @@
-{"∨ over ∧": "",
+{"∨ over ∧": "∨を∧まで",
  "∨ Tutorial: The Kraken": "∨ チュートリアル: クラーケン",
- "∧ over ∨": "",
+ "∧ over ∨": "∧を∨まで",
  "∧ Tutorial: Party Invites": "∧ チュートリアル: パーティーの招待",
  "↔ Tutorial: Party Games": "",
  "→ distributes over ∧": "→は∧に関し分配的",
@@ -13,7 +13,7 @@
  "¬ Tutorial: Falsification": "",
  "repeat combinator": "繰り返しコンビネータ",
  "repeat assumption": "assumptionを繰り返す",
- "or distributes over and": "",
+ "or distributes over and": "∨は∧に関し分配的",
  "not_not_not": "",
  "not not introduction.": "",
  "level completed! 🎉": "レベルコンプリート！ 🎉",
@@ -29,7 +29,7 @@
  "and_intro, and_left, and_right": "",
  "and_imp 2": "and_imp 2",
  "and_imp": "and_imp",
- "and distributes over or": "",
+ "and distributes over or": "∧は∨に関し分配的",
  "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`": "`λ h : I ∧ S ↦ and_intro (and_right h) h.left`",
  "`or_elim h₃ ... ...`": "`or_elim h₃ ... ...`",
  "`identity`": "",
@@ -55,9 +55,9 @@
  "You definitely have a knack for providing conditional arguments!": "あなたは条件付き命題の展開が本当に上手ですね！",
  "Write the necessary nested function(s)!": "必要なネストされた関数を作ろう！",
  "Who is loyal, who is a spy?": "",
- "Well, done.\r\n\r\n---\r\n```\r\nexact or_elim h or_inr or_inl\r\n```": "",
+ "Well, done.\r\n\r\n---\r\n```\r\nexact or_elim h or_inr or_inl\r\n```": "よくやった。\r\n\r\n---\r\n```\r\nexact or_elim h or_inr or_inl\r\n```",
  "Well reasoned": "",
- "Well done, you're getting good at this!": "",
+ "Well done, you're getting good at this!": "よくやった、上手くなってきたね！",
  "Well Concluded!": "",
  "Use the constructor tactic": "タクティク「constructor」を使う",
  "Use the assumption tactic": "タクティク「assumption」を使う",
@@ -71,14 +71,14 @@
  "This joke is a reach, I know, but my answer in this level kinda spells `ahaa` — `λa ↦ h a a`. \\\r\n\\\r\nOkay, okay. Let's proceed.":
  "",
  "This is a great example of how the infix `imp_trans` operator can streamline a level:\r\n\r\n---\r\n```lean\r\nhave g := h.left\r\nexact or_elim h.right\r\n  (and_intro g ≫ or_inl)\r\n  (and_intro g ≫ or_inr)\r\n```":
- "",
+ "これは、中置演算子`imp_trans`がどうやってレベルを合理化できるか示すよい例です：\r\n\r\n---\r\n```lean\r\nhave g := h.left\r\nexact or_elim h.right\r\n  (and_intro g ≫ or_inl)\r\n  (and_intro g ≫ or_inr)\r\n```",
  "Think before you act :)": "動く前に考えよう :)",
  "These unintuitive statements highlight the inherent challenge in contemplating the *potential* existence (or definite non-existence) of implications.\r\n\r\nThat's a twist of logic, to be sure!":
  "",
  "The law of non-self-contradiction": "",
  "The bakery guy, upon reviewing your evidence, exclaims, \"Amazing! I never knew this. With this added knowledge, I'll be able to bake your cake!\"\r\n\r\n----\r\nIn this level, as your goal is `I ∧ S → S ∧ I`, the game automatically recognizes the evidence you're assuming. You don't need to explicitly write it out. Therefore, you can use the following alternatives:\r\n```\r\nfun h => and_intro (and_right h) (and_left h)\r\nfun h => and_intro h.right h.left\r\n-- or with Unicode\r\nλh ↦ ⟨h.right, h.left⟩\r\n```":
 "パン屋の店主は、あなたの証拠を確認した後、驚いて「すごい！そんなこと知らなかった！この追加の知識があれば、あなたのケーキを焼くことができます！」と叫びました。\r\n\r\n----\r\nこのレベルでは、あなたのゴールが `I ∧ S → S ∧ I` であるため、ゲームはあなたが仮定している証拠を自動的に認識します。明示的に書く必要はありません。したがって、以下の代替手段を使えます。:\r\n```\r\nfun h => and_intro (and_right h) (and_left h)\r\nfun h => and_intro h.right h.left\r\n-- もしくはUnicodeで\r\nλh ↦ ⟨h.right, h.left⟩\r\n```",
- "The Implication": "",
+ "The Implication": "含意",
  "The Have Tactic": "タクティク「have」",
  "That's settled... again!\r\n\r\n----\r\nReminder that these are the same:\r\n```\r\nλp ↦ λa ↦ h ⟨p,a⟩\r\n-- and\r\nλp a ↦ h ⟨p,a⟩\r\n```":
  "",
@@ -121,7 +121,7 @@
  "ケーキであることを確認する証拠を集めたら、ゲームは単純になります。この番組の魅力は、「ケーキはケーキだ」という単純な決まり文句にあるのではなく、出場者たちが信頼できる証拠をまとめる技術にあります。通常、最も説得力のある証拠は、ホストが対象物に切り込みを入れて中身を見せるときに披露されます。\r\n\r\n----\r\n# A Tip\r\nさらに、ゴールはすでに想定される証拠の型を指定しているので、想定される命題を明示的に書き出すことなく、関数を合理化することができます。\r\n```\r\nexact λ(h : C) ↦ h\r\n-- こう書ける\r\nexact λh ↦ h\r\n```",
  "Old Hat": "",
  "Okay, that was a bit easy for a boss level. Don't sweat it, just enjoy the icecream!":
- "",
+ "ボス戦にしては簡単だったかな。気にすんな、アイスクリームを楽しもう！",
  "Oh, how nice! A fast solution to a complex problem.\r\n\r\n----\r\nIf you've read the inventory page for `rw`, you may have seen another solution too. You can use the backwards arrow “`←`” to change `P`s to `L`s instead of `L`s to `P`s. Also, you can change a hypothesis instead of the goal.\r\n```\r\nrw [← h₁] at h₂\r\nexact h₂\r\n```\r\n\r\nHere's an example of what this looks like without the `rw` tactic — if you want to try this solution, copy & paste the following text to the editor input mode.\r\n```\r\nexact ⟨\r\n  λh₃ ↦ have ⟨a,c,np⟩ := h₂.mp (\r\n    λh₄ ↦ h₃ (λ⟨hl₅,hr₅⟩ l ↦ h₄ ⟨\r\n      λa ↦ or_elim\r\n        (hl₅ a)\r\n        or_inl\r\n        (imp_trans h₁.mpr ≫ or_inr)\r\n    ,\r\n      λ_ ↦ hr₅ (or_inl l)\r\n    ⟩ (h₁.mp l))\r\n  )\r\n  ⟨a, c, h₁.mp ≫ np⟩\r\n,\r\n  λ⟨a,c,nl⟩ _ ↦ false_elim (\r\n    h₂.mpr\r\n      ⟨a, c, h₁.mpr ≫ nl⟩\r\n      λ_ _ ↦ c\r\n  )\r\n⟩\r\n```\r\nThe thing to notice here is that this long-form solution needs both `h₁.mp` and `h₁.mpr`. Keep in mind that though it’s often tempting to try to use conditionals (`→`), rewrite **requires** a biconditional (`↔`) to work.":
  "",
  "Nothing New": "新しいことはない",
@@ -148,8 +148,8 @@
  "In this game, the deductive rule *modus_ponens* is just function application.\r\n```\r\nintro h : A ∧ B\r\nhave a : A := and_left h\r\n-- could be written as\r\nhave a : A := modus_ponens and_left h\r\n```\r\nand\r\n```\r\nintro a : A\r\nintro b : B\r\nhave h : A ∧ B := and_intro a b\r\n-- could be written as\r\nhave h : A ∧ B := modus_ponens (modus_ponens and_intro a) b\r\n```\r\n\r\nYou should never use this style of prefix `modus_ponens` and just use function application instead as that will generally be clearer.\r\n\r\n----\r\n# Infix Modus Ponens\r\nThere is are infix operators for function application; they look like `|>` and `<|`. `f <| x`, and `x |> f` means the same as the same as `f x`.\r\n\r\n`<|` parses `x` with lower precedence, which means that `f <| g $ <|` is interpreted as `(f (g x))` rather than `((f g) x)`.\r\n\r\nIt's twin, `|>` chains such that `x |> f |> g` is interpreted as `g (f x)`.\r\n\r\nWhat makes the infix operators useful is that they can often replace a pair of brackets `(...)` making expressions easier to read.\r\n\r\n----\r\n# Computer Science\r\nIf you've done some programming before, you might recognise `Modus Ponens` as the identity function for implications. So `(modus_ponens and_left)` is extensionally equal to `and_left`. There's a conspiracy at work here!":
  "このゲームでは、演繹規則*modus_ponens*は、単なる関数適用である。\r\n```\r\nintro h : A ∧ B\r\nhave a : A := and_left h\r\n-- 次のようにも書ける\r\nhave a : A := modus_ponens and_left h\r\n```\r\nあるいは\r\n```\r\nintro a : A\r\nintro b : B\r\nhave h : A ∧ B := and_intro a b\r\n-- 次のようにも書ける\r\nhave h : A ∧ B := modus_ponens (modus_ponens and_intro a) b\r\n```\r\n\r\nこの形式の接頭辞 `modus_ponens` は決して使うべきでなく、代わりに関数適用を使うのが一般的である。\r\n\r\n----\r\n# 接中辞のモーダス・ポネンス\r\nここには関数適用の接中辞がある：それらは`|>`や`<|`のように見える。`f <| x`と`x |> f`は`f x`と同じ意味である。\r\n\r\n`<|` は`x` を低い優先順位で解析する。つまり、`f <| g <| x` は `((f g) x)`ではなく `(f (g x))` と解釈される。\r\n\r\n`|>`の連鎖は双子のようなもので、`x |> f |> g`は`g (f x)`と解釈される。\r\n\r\nこの接中辞演算子が便利な点は、2つの括弧 `(...)` を置き換えることで、式を読みやすくすることができる所だ。\r\n\r\n----\r\n# コンピューターサイエンス\r\nプログラミングをやったことがある人なら、`modus_ponens`が含意の恒等関数であることに気づくかもしれない。つまり、`(modus_ponens and_left)`は拡張的に`and_left`と等しい。ここには陰謀が働いている！",
  "Implies a Negation": "",
- "Implication of ∨": "",
- "Implication across ∨": "",
+ "Implication of ∨": "∨の含意",
+ "Implication across ∨": "∨を跨ぐ含意",
  "Implication Tactic Boss": "「含意」　タクティク　ボス",
  "Iff_mp": "",
  "Iff_Intro": "",
@@ -196,13 +196,13 @@
  "",
  "Chain Reasoning": "連鎖的推論",
  "Cases for a Conjunction": "論理積のケース",
- "Carry On Effects": "",
+ "Carry On Effects": "継続的効果",
  "Cake Form Swap": "ケーキの形の交換",
  "Cake Delivery Service": "ケーキ配達サービス",
  "Both P and Q entails just Q as well!": "「PかつQ」は、Qも伴っている！",
  "Assumption": "仮定",
  "As proof terms start getting bigger, it makes more sense to use Editor mode instead of typewritter mode.\r\n\r\n----\r\n```\r\nexact or_elim h\r\n  (λg ↦ ⟨or_inl g, or_inl g⟩)\r\n  (λhu ↦ ⟨or_inr hu.left, or_inr hu.right⟩)\r\n```\r\nYou can split this up a bit, but you'll need to write out a lot of propositions in full.\r\n```\r\n-- the case for g\r\nhave fg : G → (G ∨ H) ∧ (G ∨ U) :=\r\n    λg ↦ ⟨or_inl g, or_inl g⟩\r\n\r\n-- the case for H ∧ U\r\nhave fhu : H ∧ U → (G ∨ H) ∧ (G ∨ U) :=\r\n    λhu ↦ ⟨or_inr hu.left, or_inr hu.right⟩\r\n\r\n-- Finish it out with or_elim\r\nexact or_elim h fg fhu\r\n```":
- "",
+ "証明項が大きくなり始めたため、タイプライターモードではなくエディターモードを使う方が理にかなっています。\r\n\r\n----\r\n```\r\nexact or_elim h\r\n  (λg ↦ ⟨or_inl g, or_inl g⟩)\r\n  (λhu ↦ ⟨or_inr hu.left, or_inr hu.right⟩)\r\n```\r\nこれは少し分割できますが、多くの命題を完全に書く必要があります。\r\n```\r\n-- Gの場合\r\nhave fg : G → (G ∨ H) ∧ (G ∨ U) :=\r\n    λg ↦ ⟨or_inl g, or_inl g⟩\r\n\r\n-- H ∧ Uの場合\r\nhave fhu : H ∧ U → (G ∨ H) ∧ (G ∨ U) :=\r\n    λhu ↦ ⟨or_inr hu.left, or_inr hu.right⟩\r\n\r\n-- or_elimで仕上げる\r\nexact or_elim h fg fhu\r\n```",
  "Apply Chain Reasoning": "連鎖的適用",
  "Apply Backwards": "逆方向の適用",
  "Apply": "適用",
@@ -239,7 +239,7 @@
  "",
  "## Summary\r\n\r\nIf `h : X = Y` and there are several `X`s in the goal, then\r\n`nth_rewrite 3 [h]` will just change the third `X` to a `Y`.\r\n\r\n## Example\r\n\r\nIf the goal is `2 + 2 = 4` then `nth_rewrite 2 [two_eq_succ_one]`\r\nwill change the goal to `2 + succ 1 = 4`. In contrast, `rw [two_eq_succ_one]`\r\nwill change the goal to `succ 1 + succ 1 = 4`.":
  "",
- "# ∨ is commutative\r\n\r\n`or_comm` is evidence that `P ∨ Q ↔ Q ∨ P`": "",
+ "# ∨ is commutative\r\n\r\n`or_comm` is evidence that `P ∨ Q ↔ Q ∨ P`": "# ∨は可換\r\n\r\n`or_comm`は`P ∨ Q ↔ Q ∨ P`の証拠である。",
  "# ∨ is Associative\r\n\r\n`or_assoc` is evidence that `P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R`":
  "",
  "# ∧ is commutative\r\n\r\n`and_comm` is evidence that `P ∧ Q ↔ Q ∧ P`": "# ∧は可換\r\n\r\n`and_comm`は`P ∧ Q ↔ Q ∧ P`の証拠である。",
@@ -411,7 +411,7 @@
  "# False\r\nOnce your goal is false, then you can `apply h`": "",
  "# Enjoy ⌣": "",
  "# Either way.\r\nChocolate chip oatmeal cookies, which ingredient goes first?\r\n1. Oatmeal or chocolate chips?\r\n2. Chocolate chips or oatmeal?\r\n# Proposition Key:\r\n- C — Chocolate chips\r\n- O — Oatmeal\r\n\r\nThis time they're not under assumptions, but you have the evidence in your inventory.\r\n- `or_inr : C → O ∨ C`\r\n- `or_inl : O → O ∨ C`":
- "",
+ "# どちらにせよ\r\nチョコチップオートミールクッキー、どの材料から入れる？\r\n1. オートミールかチョコチップ？\r\n2. チョコチップかオートミール？\r\n# 命題キー:\r\n- C — チョコチップ\r\n- O — オートミール\r\n\r\n今回は仮定ではなく、インベントリの証拠を使います。\r\n- `or_inr : C → O ∨ C`\r\n- `or_inl : O → O ∨ C`",
  "# Disjunction\r\n## Introduction\r\nAn “Or” like `h : P ∨ Q` can be introduced in two ways:\r\n1. If you have `p : P`, you can use `or_inl p`\r\n2. If you have `q : Q`, you can use `or_inr q`\r\n\r\nIn either case, remember that the other type in your disjunction must be inferable in context or supplied as part of the expression. For example: `(or_inl p : P ∨ Q)`\r\n## Elimination\r\nAn “Or” like `h : P ∨ Q` can be be eliminated if both P and Q imply the same proposition. In this example, P or Q implies R:\r\n```\r\n-- Assumptions\r\npvq: P ∨ Q\r\npr : P → R\r\nqr : Q → R\r\n-- Goal: R\r\nexact or_elim pvq pr qr\r\n```":
  "",
  "# Definitely Not\r\nYour cake order definitely has sprinkles, which means it's **not** missing sprinkles and loaded with chocolate chips\r\n# Proposition Key:\r\n- `C` — The cake is loaded with chocolate chips\r\n- `S` — The cake is topped with sprinkles":
@@ -432,7 +432,7 @@
  "",
  "# Cases again\r\nSimilar to last level.": "",
  "# Carry On Effects\r\nIf the cake arrives, then everybody will rejoice. Either the cake arrives or you get a refund. Therefore, either everybody will rejoice or you get a refund! That's a win-win situation.\r\n# Proposition Key:\r\n- C — The cake arrives\r\n- J — Everybody is joyful\r\n- R — You get a refund":
- "",
+ "# 継続的効果\r\nケーキが届いたら、皆喜ぶでしょう。ケーキが届かなかったら、返金されるでしょう。ですから、皆喜ぶか、返金されます！ウィンウィンの状況ですね。\r\n# 命題キー:\r\n- C — ケーキが届いた\r\n- J — 皆喜ぶ\r\n- R — 返金される",
  "# Biconditional\r\n## Introduction\r\nAn “If and only if” can be introduced with the `iff_intro` theorem. Biconditionals and conjunctions can both be constructed using the angle bracket notation as well.\r\n### Examples\r\n```\r\n-- Assumptions\r\nh₁ : P → Q\r\nh₂ : Q → P\r\n-- Each new term is evidence for P ↔ Q\r\n-- Explicit Constructer, no annotations needed\r\nhave h₁ := iff_intro h₁ h₂\r\nhave h₂ := iff_intro (mp := h₁) (mpr := h₂)\r\n-- Implicit Constructuer, annotations based on context\r\n-- Type these angle brackets with “\\<” and “\\>”\r\nhave h₆ : P ↔ Q := ⟨h₁, h₂⟩\r\nhave h₇ := (⟨h₁, h₂⟩ : P ↔ Q)\r\n```\r\n## Elimination\r\nAn “If and only if” like `h : P ↔ Q` can be reduced in two ways:\r\n1. Aquire evidence for `P → Q` using `iff_mp h` or `h.mp`\r\n2. Aquire evidence for `Q → P` using `iff_mpr h` or `h.mpr`\r\n## Rewrite\r\nBiconditionals let you use the `rewrite` tactic to change goals or assumptions.":
  "",
  "# BOSS Level\r\n\"Is it possible that if this is the cake you bought, then it's gonna taste horrible?\"\\\r\n\"I'm certain that's not possible!\"\\\r\n\"Oh, so what you're saying is that you have evidence that this is not not the cake you bought.\"\r\n# Proposition Key:\r\n- `B` — You bought this cake\r\n- `C` — The cake tastes horrible":
@@ -448,7 +448,7 @@
  "# BOSS LEVEL\r\nIf you can finish this level, you've certainly mastered the `∧`. There's no deep logical tricks in this boss level, you've just got to know how to work at properly unnesting and then building the right Proposition.\\\r\n\\\r\nUsing the `have` tactic, you can break this task down into digestible chunks. The top right of the screen has a button that toggles between editor mode and typewriter mode. Editor mode is often a bit easier to work with as it allows you to enter multi-line expressions or edit earlier lines seamlessly. While in editor mode, the proof state will change depending on which line your caret is on.\r\n# Rearranging Boxes\r\nFinally, a bunch of your invites have returned with RSVPs. The mailman has delivered them in a big box. Make a list of the expected attendees so far.\r\n# Proposition Key:\r\n- A — **A**larfil is coming to the party\r\n- C — **C**yna** is coming to the party\r\n- I — **I**lyn** is coming to the party\r\n- O — **O**rin** is coming to the party\r\n- P — **P**ippin** is coming to the party\r\n- S — **S**ybeth** is coming to the party\r\n- U — **U**riel** is coming to the party":
  "# BOSS LEVEL\r\nこれがクリアできるなら,あなたは確かに`∧`をマスターしています。このボスレベルには深い論理的なトリックはありません、適切に入れ子を外し、適切な命題を構築する方法を知らなければなりません。\r\n\r\n`have`タクティクを使えば、このタスクを分解してわかりやすくすることができます。画面右上には、エディターモードとタイプライターモードを切り替えるボタンがあります。エディターモードでは、複数行の式を入力したり、前の行をシームレスに編集したりできるので、作業が少し楽になることが多いです。エディターモードでは、証明状態は、キャレットがどの行にあるかによって変化します。\r\n# 箱を並べ替える\r\nようやく、招待状の束がRSVP(お返事下さい、の意)とともに戻ってきました。郵便屋さんが大きな箱に入れて届けてくれました。これまでの参加予定者のリストを作成しましょう。\r\n# 命題キー:\r\n- A — **A**larfilがパーティーに来る\r\n- C — **C**ynaがパーティーに来る\r\n- I — **I**lynがパーティーに来る\r\n- O — **O**rinがパーティーに来る\r\n- P — **P**ippinがパーティーに来る\r\n- S — **S**ybethがパーティーに来る\r\n- U — **U**rielがパーティーに来る",
  "# BOSS LEVEL\r\nIf we summon the Kraken, then we shall assuredly perish. While that might sound ominous, consider this: if we summon the Kraken or **have icecream**, then we shall **have icecream!** or we shall perish.\r\n# Proposition Key:\r\n- I — **We have have icecream!**\r\n- K — We summon the Kraken\r\n- P — We shall assuredly perish":
- "",
+ "# BOSS LEVEL\r\nクラーケンを召喚したら、私たちは滅びるでしょう。それは不穏に聞こえるかもしれないけど、考えてみてください：もしクラーケンを召喚するか**アイスクリームを食べる！** なら、**アイスクリームを食べる！**...か滅びるでしょう。\r\n# 命題キー:\r\n- I — **アイスクリームを食べる！**\r\n- K — クラーケンを召喚する\r\n- P — 私たちは必ず滅びる",
  "# Another self-contradiction\r\nIf you try to `apply h` right away, you'll be stuck. You'll have to try something else first.\\\r\n\\\r\nOnce your goal is to show `False`, then `apply h` seems to do something funny. It asks you to show evidence for the same goal twice. If you try to apply `P → Q → R → S` to a Goal of `S`, then apply will make you prove each parameter separately — resulting is the three sub-goals of showing `P`, showing `Q`, and showing `R`.\\\r\n\\\r\nIn this level, `apply h` is applying `P → P → False` to a goal of `False`, so it follows that you'll need to show evidence for `P` twice.":
  "",
  "# Another Unlock\r\nCan you figure this one out?": "# もう一つの解禁\r\n分かるかな？",
@@ -469,9 +469,9 @@
  "# A new way to use the `cases` tactic\r\nYou've used cases so far as a means to take apart conjunctions like `P ∧ Q`. The same tactic works a bit differently on disjunctions. When you use `cases h3`, you'll need to show `P` assuming Q and show `P` assuming `R`. Then the game will conclude that `P` is the case regardless of which of the disjunctions are true.":
  "",
  "# A distribution of cookies\r\nYou can tell the cookies are either gingersnap cookies or they're a mix of shortbread cookies and sugar cookies.\r\n# Proposition Key:\r\n- G — They are gingersnap cookies\r\n- H — They are shortbread cookies\r\n- U — They are sugar cookies":
- "",
+ "# クッキーの分配\r\nクッキーは、ジンジャースナップか、ショートブレッドとシュガークッキーのミックスであると言うことができます。\r\n# 命題キー:\r\n- G — それらはジンジャースナップクッキーです\r\n- H — それらはショートブレッドクッキーです\r\n- U — それらはシュガークッキーです",
  "# A distribution of cookies\r\nYou can tell from the aroma that there are are gingersnap cookies. There's another smell there too. Could be shortbread cookies or sugar cookies.\r\n# Proposition Key:\r\n- G — They are gingersnap cookies\r\n- H — They are shortbread cookies\r\n- U — They are sugar cookies":
- "",
+ "# クッキーの分配\r\nジンジャースナップクッキーの匂いがします。他の匂いもします。ショートブレッドクッキーかシュガークッキーの匂いです。\r\n# 命題キー:\r\n- G — それらはジンジャースナップクッキーです\r\n- H — それらはショートブレッドクッキーです\r\n- U — それらはシュガークッキーです",
  "# A Longer Level\r\nThe `rw` tactic makes this level a cakewalk. For the redux version we're going to make this outright tedious, but this will show without a doubt that you've mastered simple propositional proofs.\\\r\n\\\r\nI suggest you finish the other redux worlds before doing this level.\\\r\n\\\r\nWe're not allowing `have`, `exact`, or `rw` for this level. It's certainly doable this way... good luck.":
  "",
  "# A Chain of Reasoning\r\nYou know Alarfil will be excited about a cake with sprinkles. Since Sybeth has just started dating Alarfil and enjoys seeing them happy, it follows that Sybeth will be excited about a cake with sprinkles.\r\n# Proposition Key:\r\n- `C` — The **C**ake has sprinkles\r\n- `A` — **A**larfil is happy\r\n- `S` — **S**ybeth is happy\r\n\r\n# Transitivity Aside\r\nWith numbers, if `a` is less than `b` and `b` is less than `c`, then you can deduce that `a` is less than `c`.\r\n$$\r\n\\cfrac{a < b\\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace  b < c}{a < c}\r\n$$\r\nThis is the transitive property of `<`. You should be able to show that this same property holds for conditionals — \"`→`\". Solving this level shows the following:\r\n$$\r\n\\cfrac{C → A\\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace \\nobreakspace  A → S}{C → S}\r\n$$\r\nThis property is so commonly useful that there exists special notation for it. **Once unlocked**, `imp_trans` has an infix operator. This looks like ≫ (which is written as “\\gg”). Example: `h1 ≫ h2`":
