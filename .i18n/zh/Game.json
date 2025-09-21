@@ -102,7 +102,7 @@
  "Repeat constructor/assumption until you're done": "完了するまでconstructor／assumptionを繰り返す",
  "Remember `h: P → ¬P` is actually `h : P → P → False`": "",
  "Remember `h : A → A → False`": "",
- "Redux: ∨ World Tactics": "",
+ "Redux: ∨ World Tactics": "再開：∨ タクティクの世界",
  "Redux: ∧ World Tactics": "再開：∧ タクティクの世界",
  "Redux: ↔ World Tactics": "",
  "Redux: → World Tactics": "再開：→ タクティクの世界",
@@ -161,8 +161,8 @@
  "Identity": "恒等",
  "Idenity via tactics": "タクティクによる恒等性",
  "Great! Another 4 invites sent out. You're getting the hang of this.": "素晴らしい！また4通の招待状を送りました。コツをつかんだようですね。",
- "Go Right": "",
- "Go Left": "",
+ "Go Right": "右へ行け",
+ "Go Left": "左へ行け",
  "Fill a box, label correctly": "箱を埋め、正しくラベル付けする",
  "False implies anything": "",
  "Exhibit evidence that you're planning a party.": "「パーティを計画している」という証拠を示してください。",
@@ -257,9 +257,9 @@
  "# and_intro\r\n### `and_intro : P -> Q -> P ∧ Q`\r\n`and_intro`は二つのパラメーターを持つ関数だ。2つの異なる証拠を組み合わせ、1つの証拠とする。もし`(e₁ : P)`と`(e₂ : Q)`が証拠なら、\r\n```\r\nhave h : P ∧ Q := and_intro e₁ e₂\r\n```\r\nとできる。",
  "# `∧`\r\nThe hat symbol “ ∧ ” is how logicians denote a conjunction — a logical “and”. `A ∧ B` means “A and B”. It works the way you would intuitively expect. Like a lot of math operators (`+,-,÷,×`,and others), the `∧` symbol is an infix operator. This means it has a left side and a right side. Looking at `A ∧ B`, you can see that `A` is on the left and `B` is on the right.\r\n\r\n# Sending Invitations in a Single Package\r\nYou have two letters, one extending an invitation to Pippin and the other to Sybeth. Since they share a residence, you'd like to consolidate their invites into a single package for shipping. The box you're using has space for two items, one on the left and one on the right.\\\r\n\\\r\nYou've labelled the box explicitly, specifying that Pippin's invitation is on the left and Sybeth's invitation is on the right. This ensures there's no confusion about the contents of the box. Upon opening it, they will easily locate their respective invites without the need to search the entire package.\r\n# Proposition Key:\r\n- P — “**P**ippin is invited to the party”\r\n- S — “**S**ybeth is invited to the party”\r\n\r\nLike the box described in the intro, any evidence for a conjunction like `A ∧ B` will have a left part and a right part.\r\n# Assumptions\r\n- `p : P` — Your invitation for Pippin is evidence that Pippin is invited to the party\r\n- `s : S` — Your invitation for Sybeth is evidence that Sybeth is invited to the party\r\n# Goal\r\nUse `p` and `s` to produce evidence that `P ∧ S`. Remember that you use evidence (generally lowercase letters), to deduce new propositions (generally uppercase letters)\r\n\r\n# Using the `∧` Construtor\r\nThis level has unlocked “`∧`” under definitions. This has made the `and_intro` theorem available. You can use `and_intro` by giving it the two relevant pieces of evidence. The expression looks like: `and_intro e₁ e₂` where `e₁` and `e₂` are evidence.\\\r\n\\\r\nThe help page has even more detail about creating conjunctions like this (There's a common shorthand using angle-brackets `⟨` `,` `⟩` ).\r\n\r\n# A reminder\r\nUse the `exact` tactic to exhibit evidence for a goal":
  "# `∧`\r\n帽子のシンボル “ ∧ ” は 論理学者にとって接続詞-論理的な「かつ」-を表す方法です。`A ∧ B`は「AかつB」という意味です。あなたが直感的に予想されるように機能します。 いくつもの数学演算子 (`+,-,÷,×`,など)のように,記号'∧'は接中辞演算子です。つまり、左側と右側があるということです。`A ∧ B`を見ると、`A`が左で`B`が右であることがわかるでしょう。\r\n\r\n# 招待状の一括送信\r\nあなたは2つの手紙を持っていて、一枚はPippinに、もう一枚はSybethに送られます。2人は住居を共有しているので、招待状を1つのパッケージにまとめて送りたいです。あなたが使っている箱には、2つのものを入れるスペースがあり、一つは左側に、もう一つは右側にあります。\r\n\r\nあなたは箱にはっきりとラベルを貼り、ピピンの招待状は左、シベスの招待状は右と明記します。これで、箱の中身で混乱が起きないことが確実になります。開封すれば、パッケージ全体を探さなくても、それぞれの招待状を簡単に見つけることができるでしょう。\r\n# 命題キー:\r\n- P — “**P**ippin がパーティーに招待された”\r\n- S — “**S**ybethがパーティーに招待された”\r\n\r\n導入で説明した箱のように、`A ∧ B`のような接続詞に対する証拠には、左の部分と右の部分があります。\r\n# 仮定\r\n- `p : P` — Pippinのへ招待状は、Pippinがパーティーに招待されている証拠です\r\n- `s : S` — Sybethのへ招待状は、Sybethがパーティーに招待されている証拠です\r\n# ゴール\r\n`p` と `s` を使い、`P ∧ S` という証拠を作ってください。 証拠（通常は小文字）を使って、新しい命題（通常は大文字）を推論することを忘れてないでください。\r\n\r\n# `∧`コンストラクタを使う\r\nこのレベルでは、「∧」が定義の元で解禁されています。これにより、定理`and_intro`が使えるようになりました。`and_intro`を使うには、関連する2つの証拠を与える必要があります。式は次のようになります：`and_intro e₁ e₂` ここで、`e₁`と`e₂`は証拠です。\r\n\r\nヘルプページには、このような接続詞の作り方についてさらに詳しく書かれています（角括弧 `⟨`,`⟩` を使った一般的な省略形があります）。\r\n\r\n# リマインダー\r\n`exact`タクティクを使い、ゴールの証拠を示しましょう。",
- "# `right` tactic\r\nCan you guess how it works?": "",
+ "# `right` tactic\r\nCan you guess how it works?": "# タクティク`right`\r\nどう動くかわかるかな?",
  "# `left` tactic\r\nIf your goal is a disjunction, `left` will change your goal to the left of that disjunction, ignoring the right.":
- "",
+ "# タクティク`left`\r\nもしゴールが論理和なら、`left`はゴールを論理和の左側に変え、右側は無視する。",
  "# `fun _ => _`\r\nYou can create evidence for an implication by defining the appropriate function.\r\n- `have h₁ : P → P := fun p : P => p`\r\n- `have h₂ : P ∧ Q → P := fun h : P ∧ Q => h.left`\r\n\r\nGenerally, you don't need to repeat the types when they're obvious from the context.\r\n- `have h₁ : P → P := fun p => p`\r\n- `have h₂ : P ∧ Q → P := fun h => h.left`\r\n\r\n# Unicode:\r\n- `fun` can be written as `λ`\r\n- `=>` can be written as `↦`\r\n----\r\n- `have h₁ : P → P := λp ↦ p`\r\n- `have h₂ : P ∧ Q → P := λh ↦ h.left`":
  "# `fun _ => _`\r\n適切な関数を定義することで、含意の証拠を作成することができる。\r\n- `have h₁ : P → P := fun p : P => p`\r\n- `have h₂ : P ∧ Q → P := fun h : P ∧ Q => h.left`\r\n\r\n一般的に、文脈から明らかな型を繰り返す必要はない。\r\n- `have h₁ : P → P := fun p => p`\r\n- `have h₂ : P ∧ Q → P := fun h => h.left`\r\n\r\n# Unicode:\r\n- `fun`は`λ`として書ける。\r\n- `=>`は`↦`として書ける。\r\n----\r\n- `have h₁ : P → P := λp ↦ p`\r\n- `have h₂ : P ∧ Q → P := λh ↦ h.left`",
  "# `cases` for a Conjunction\r\nHere, we introduce the `cases` tactic in an unstructured context. `cases` takes a name from the local context and either splits it into multiple goals, or deconstructs it into its parts depending on the Proposition.\\\r\n\\\r\nIn this level, `cases h` will replace `h` with its `left` and `right` parts. Try it out.":
@@ -327,7 +327,7 @@
  "# Remember to use `or_assoc` and `and_assoc`\r\nEven without the `rw` tactic, this can be solved in a few lines.":
  "",
  "# Redux: ∨ World Tactics\r\nWelcome to the redux of the **∨ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\r\n\\\r\nThis world introduces tactics that you can use in lieu of the expressions you've learned so far.":
- "",
+ "# 再開: ∨ タクティクの世界\r\nチュートリアルの再編集版へようこそ。どのレベルも同じだが、各レベルを`have`と`exact`で解く代わりに、このワールドではカスタムタクティクの数々が開かれている。\r\n\r\nこのワールドでは、これまで学んだ式の代わりに使えるタクティクを紹介している。",
  "# Redux: ∧ World Tactics\r\nWelcome to the redux of the **∧ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\r\n\\\r\nThis world introduces tactics that you can use in lieu of the expressions you've learned so far.":
  "# 再開：∧ タクティクの世界\r\nチュートリアルの再編集版へようこそ。どのレベルも同じだが、各レベルを`have`と`exact`で解く代わりに、このワールドではカスタムタクティクの数々が開かれている。\r\n\r\nこのワールドでは、これまで学んだ式の代わりに使えるタクティクを紹介している。",
  "# Redux: ↔ World Tactics\r\nWelcome to the redux of the **↔ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\r\n\\\r\nThis world introduces tactics that you can use in lieu of the expressions you've learned so far.":
