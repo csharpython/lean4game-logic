@@ -298,8 +298,8 @@
  "",
  "# The Alarfil Effect\r\nYou're delighted that Alarfil will be there.\\\r\n\\\r\nRemarkably, even in moments when Alarfil lacks humor, he manages to be amusing! His comedic charm persists, regardless of circumstances.\r\n# Proposition Key:\r\n- `A` — Alarfil is humorless":
  "",
- "# Tactics, Tactics, Tactics": "",
- "# Tactics All Day Long": "",
+ "# Tactics, Tactics, Tactics": "# タクティク、タクティク、タクティク",
+ "# Tactics All Day Long": "# 一日中タクティク",
  "# Sybeth's Punctuality\r\nSybeth is never on time. Despite her assurances that she'll grace the party with her timely presence, past experiences have proven otherwise. It's almost become a running joke, so much so that you playfully quip, \"Yeah, if you arrive on time, then I'll eat my boots.\"\r\n# Proposition Key:\r\n- `B` — You eat your boots\r\n- `S` — Sybeth is on time\r\n# `false_elim`\r\nYou've unlocked the \"false implies anything\" function. `false_elim` will take evidence for `False` and produce evidence for **anything**.\r\n# A Tip\r\nRemember you can think of `h : ¬S` as `h : S → False`.\\\r\n\\\r\nOnce you've started with `λ(s : S) ↦ `, you'll then see that the expression `h s` evaluates to evidence for `False`. If ever you have evidence for `False`, you should always immediately consider using `false_elim` to create evidence for anything — which in this case will be `B`.\\\r\n\\\r\nThere is no proof that \"keeps going\" once you've created evidence for `False`. Some proofs have multiple parts, so you may close off one line of reasoning and move on to another, but there can be no meaningful logic in any context where evidence for `False` is present.":
  "",
  "# Summary\r\nThe `exact` tactic is a means through which you give the game your answer. Many levels can be done in multiple steps. You'll use the `exact` tactic when you're ready to create the final expression. It will be evaluated to see whether it matches the goal.\r\n\r\n`exact` will work with any expression and attempt to unify it with the current goal. The simplest such expression is just a name that — `:` — “is evidence for” the goal. More complicated expressions often make use of unlocked definitions and theorems as well as function abstraction and application.\r\n\r\n# Errors\r\nBecause most of the starting levels use only the `exact` tactic and an expression, it's common to forget to specify the tactic. Sometimes this raises the error:\r\n```\r\nunknown tactic\r\n```\r\nand other times the much more ambiguous message:\r\n```\r\nno goals left\r\nThis probably means you solved the level with warnings or Lean encountered a parsing error.\r\n```\r\nHopefully we'll have better error messages in the future ☺\r\n\r\n### Example\r\n```\r\nObjects:\r\nP : Prop\r\nAssumptions:\r\nh : P\r\nGoal:\r\nP\r\n```\r\n----\r\n```\r\nexact h\r\n```\r\n\r\n### Example\r\n```\r\nObjects:\r\nP Q: Prop\r\nAssumptions:\r\nh : (P → Q) ∧ ¬Q\r\nGoal:\r\n¬P\r\n```\r\n----\r\n```\r\nexact λp ↦ and_right h (and_left h p)\r\n```":
@@ -405,7 +405,7 @@
  "# Follow the Graph Backwards\r\n$$\r\n\\begin{CD}\r\n  P  @>{h₁}>> Q       @>{h₂}>> R \\\\\r\n  @.         @VV{h₃}V           \\\\\r\n  S  @>>{h₄}> T       @>>{h₅}> U\r\n\\end{CD}\r\n$$":
  "# グラフを逆方向にたどる\r\n$$\r\n\\begin{CD}\r\n  P  @>{h₁}>> Q       @>{h₂}>> R \\\\\r\n  @.         @VV{h₃}V           \\\\\r\n  S  @>>{h₄}> T       @>>{h₅}> U\r\n\\end{CD}\r\n$$",
  "# Final `∨` Tactic Level\r\nThis level uses most of the tactics you've learned so far.":
- "",
+ "# タクティク`∨`最終レベル\r\nこのレベルでは、今まで学んだタクティクのほとんどを使うことになる。",
  "# False\r\nThis is a proposition for which there can never be any evidence. If your assumptions lead you to evidence for `False`, then your assumptions are inconsitent and you can use `false_elim` to deduce any proposition you like.":
  "",
  "# False\r\nOnce your goal is false, then you can `apply h`": "",
