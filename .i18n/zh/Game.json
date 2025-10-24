@@ -69,7 +69,7 @@
  "これはオレンジが野菜かどうかについて何も言っていません。私たちが知っているのは、`O`と`S`の少なくとも1つが真であるということです。",
  "This one takes a while": "",
  "This joke is a reach, I know, but my answer in this level kinda spells `ahaa` — `λa ↦ h a a`. \\\r\n\\\r\nOkay, okay. Let's proceed.":
- "",
+ "このジョークに無理があるのはわかってるけど、このレベルの私の答えはちょっと`ahaa`、「あはっ」って綴れるんだよね—`λa ↦ h a a`。\r\n\r\n...わかった、進めようか。",
  "This is a great example of how the infix `imp_trans` operator can streamline a level:\r\n\r\n---\r\n```lean\r\nhave g := h.left\r\nexact or_elim h.right\r\n  (and_intro g ≫ or_inl)\r\n  (and_intro g ≫ or_inr)\r\n```":
  "これは、中置演算子`imp_trans`がどうやってレベルを合理化できるか示すよい例です：\r\n\r\n---\r\n```lean\r\nhave g := h.left\r\nexact or_elim h.right\r\n  (and_intro g ≫ or_inl)\r\n  (and_intro g ≫ or_inr)\r\n```",
  "Think before you act :)": "動く前に考えよう :)",
@@ -101,7 +101,7 @@
  "Rewriting": "",
  "Repeat constructor/assumption until you're done": "完了するまでconstructor／assumptionを繰り返す",
  "Remember `h: P → ¬P` is actually `h : P → P → False`": "",
- "Remember `h : A → A → False`": "",
+ "Remember `h : A → A → False`": "`h : A → A → False`を思いだそう",
  "Redux: ∨ World Tactics": "再開：∨ タクティクの世界",
  "Redux: ∧ World Tactics": "再開：∧ タクティクの世界",
  "Redux: ↔ World Tactics": "",
@@ -109,7 +109,7 @@
  "Redux: ¬ World Tactics": "",
  "Rearranging Boxes": "箱の並べ替え",
  "Practise Makes Perfect": "習うより慣れろ",
- "Phew, that makes perfect sense now.": "",
+ "Phew, that makes perfect sense now.": "ふう、これで完全に納得したよ。",
  "P and Q implies P": "「PかつQ」はPを包含する",
  "Or is Commutative": "「または」は可換",
  "Or Introduction Right": "「または」の導入則・右",
@@ -129,15 +129,15 @@
  "Not False": "偽ではない",
  "Nice. Onward!\r\n\r\n----\r\n```\r\nexact h.right\r\n```\r\n----\r\n```\r\nexact and_right h\r\n```":
  "いいね。前進だ！\r\n\r\n----\r\n```\r\nexact h.right\r\n```\r\n----\r\n```\r\nexact and_right h\r\n```",
- "Nested `λ↦`s.": "",
- "Negation into conjunction.": "",
- "Negation": "",
- "Negated Conjunction": "",
+ "Nested `λ↦`s.": "入れ子の`λ↦`",
+ "Negation into conjunction.": "否定を論理和へ",
+ "Negation": "否定",
+ "Negated Conjunction": "否定された論理積",
  "Navigate the tree": "ツリーのナビゲーション",
  "More Elimination": "もっと除去を",
  "More Cases": "もっとcasesを",
- "Modus Tollens.": "",
- "Modus Tollens": "",
+ "Modus Tollens.": "モーダス・トレンス。",
+ "Modus Tollens": "モーダス・トレンス",
  "Mix and Match": "混ぜて合わせて",
  "Might it possibly still be filled with chocolate chips? That sounds absolutely delightful!":
  "",
@@ -185,7 +185,7 @@
  "Congratulations. You have evidence that your party will have cake!\r\n\r\n----\r\n1:\r\n```\r\nhave c := bakery_service p\r\nexact c\r\n```\r\n2:\r\n```\r\nexact bakery_service p\r\n```\r\n3:\r\n```\r\nexact modus_ponens bakery_service p\r\n```":
  "おめでとう。あなたのパーティーにはケーキがあるという証拠だ！\r\n\r\n----\r\n1:\r\n```\r\nhave c := bakery_service p\r\nexact c\r\n```\r\n2:\r\n```\r\nexact bakery_service p\r\n```\r\n3:\r\n```\r\nexact modus_ponens bakery_service p\r\n```",
  "Congratulations. Did you recognise this proof? It's actually a slightly less general version of the proof you used in the \"**→ Tutotial world, level 4**\" to show that implication is transitive.\r\n\r\n---\r\nThinking of `h₂` as `Q → False`, you can actually use your imp_trans theorem here.\r\n```\r\nexact λp ↦ h₂ (h₁ p)\r\n```\r\n```\r\nexact imp_trans h₁ h₂\r\n```\r\nFor the math-inclined, because the expression for an implication is a function, you can also use function composition.\r\n```\r\nexact h₂ ∘ h₁\r\n```":
- "",
+ "おめでとう。この証明を理解できましたか？これは、実は「**→ チュートリアル,レベル4**」で含意が推移的であることを示すために使った証明の、少し一般性を落としたバージョンです。\r\n\r\n---\r\n`h₂`を`Q → False`と見なすと、実は`imp_trans`を使うことができます。\r\n```\r\nexact λp ↦ h₂ (h₁ p)\r\n```\r\n```\r\nexact imp_trans h₁ h₂\r\n```\r\n数学に精通している方へ：含意の式は関数であるため、関数合成も使えます。\r\n```\r\nexact h₂ ∘ h₁\r\n```",
  "Congratulations, not only have you started your todo list, you've learned how to exhibit the list as evidence that you've started planning the party.":
  "おめでとう、あなたはTodoリストを始めただけでなく、「あなたはパーティーの計画を立て始めた」という証拠としてのリストを示す方法を学びました。",
  "Commutativity of “`∨`”": "“`∨`”の可換性",
@@ -291,13 +291,13 @@
  "# The `apply` Tactic\r\nThis tactic can be a bit confusing as it allows you to reason backwards. In this level, `h` gives us a means to get from P to Q. We can reason backwards and say, that because you have the means to turn evidence for P into evidence for Q — it suffices to show evidence for P.\\\r\n\\\r\nIf you write `apply h`, you'll see that this changes your goal from `Q` to `P`.":
  "# タクティク`apply`\r\nこのタクティクは、逆方向に推論できるため、少し混乱を招くかもしれない。このレベルでは、`h` は、Pから Q を得るための手段を提供する。逆から考えると、Pの証拠をQの証拠に変換する手段があるからこそ — Pの証拠を示すだけで十分である。\r\n\r\n`apply h`と書けば、ゴールが`Q`から`P`に変わることが分かるだろう。",
  "# The Power of negation\r\n\"Is it possible that if this is the cake you bought, then it's gonna taste horrible?\"\\\r\n\"I'm certain that's not possible.\"\\\r\n\"Oh, so what you're saying is that you have evidence that the cake is delicious!\"\r\n# Proposition Key:\r\n- `B` — You bought this cake\r\n- `C` — The cake tastes horrible":
- "",
+ "# 否定の力\r\n「もしこのケーキは君が買ったものなら、まずい味がしないだろうか？」\r\n「それは絶対にありえない。」\r\n「ああ、君はケーキがおいしいって証拠を持っていることを言いたいんだね！」\r\n# 命題キー:\r\n- `B` — あなたはこのケーキを買った\r\n- `C` — このケーキはまずい",
  "# The Final “Redux: ¬ World Tactics” level\r\n\r\n`contradiction` is available this level, you can use it to shorten your answer a little bit.":
  "",
  "# The Ambiguous Celebration Response\r\nYour somewhat bothersome cousin just called and is asking if you're throwing your annual soirée this year. You don't want to outright lie, so you say \"I'm not not throwing the party.\"\r\n# Proposition Key:\r\n- `P` — You're throwing a party'":
  "# 曖昧なお祝いの反応\r\nちょっと面倒なおじさんが今電話してきて、今年に恒例のパーティーを開くか聞いてきました。嘘をつきたくないので、「パーティーを開かないわけじゃないよ。」と言うことにしました。\r\n# 命題キー:\r\n- `P` — パーティーを開く",
  "# The Alarfil Effect\r\nYou're delighted that Alarfil will be there.\\\r\n\\\r\nRemarkably, even in moments when Alarfil lacks humor, he manages to be amusing! His comedic charm persists, regardless of circumstances.\r\n# Proposition Key:\r\n- `A` — Alarfil is humorless":
- "",
+ "# Alarfil効果\r\nAlarfilがそこにいることにあなたは喜んでいます。\r\n\r\n驚くべきことに、Alarfilからユーモアが欠けている時でさえ、彼はずっと面白いです！彼のユーモアのセンスは、どんな時でも変わりません。\r\n# 命題キー\r\n- `A` — Alarfilはユーモアが欠けている",
  "# Tactics, Tactics, Tactics": "# タクティク、タクティク、タクティク",
  "# Tactics All Day Long": "# 一日中タクティク",
  "# Sybeth's Punctuality\r\nSybeth is never on time. Despite her assurances that she'll grace the party with her timely presence, past experiences have proven otherwise. It's almost become a running joke, so much so that you playfully quip, \"Yeah, if you arrive on time, then I'll eat my boots.\"\r\n# Proposition Key:\r\n- `B` — You eat your boots\r\n- `S` — Sybeth is on time\r\n# `false_elim`\r\nYou've unlocked the \"false implies anything\" function. `false_elim` will take evidence for `False` and produce evidence for **anything**.\r\n# A Tip\r\nRemember you can think of `h : ¬S` as `h : S → False`.\\\r\n\\\r\nOnce you've started with `λ(s : S) ↦ `, you'll then see that the expression `h s` evaluates to evidence for `False`. If ever you have evidence for `False`, you should always immediately consider using `false_elim` to create evidence for anything — which in this case will be `B`.\\\r\n\\\r\nThere is no proof that \"keeps going\" once you've created evidence for `False`. Some proofs have multiple parts, so you may close off one line of reasoning and move on to another, but there can be no meaningful logic in any context where evidence for `False` is present.":
@@ -369,9 +369,9 @@
  "# More practise\r\nThis level will require `apply` again. Remember that it lets you reason backwards on the goal.":
  "# もっと練習\r\nこのレベルでは再び`apply`が必要になる。ゴールに対して逆方向に推論する点に注意しよう。",
  "# Modus Tollens\r\nIf Bella comes to the party, she is certain to perform a bawdy song. You've assured Sybeth that there will be no bawdy songs at the event. Sybeth is disappointed to discover that Bella won't be joining.\r\n# Proposition Key:\r\n- `B` — Bella is attending the party\r\n- `S` — A bawdy song will be sung":
- "",
+ "# モーダス・トレンス\r\nBellaはパーティーに来たら、必ず下品な歌を歌うに違いありません。あなたはSybethに、そのイベントでは下品な歌はないと保証しました。SybethはBellaが参加しないと知り、がっかりしました。\r\n# 命題キー:\r\n- `B` — Bellaがパーティーに来る\r\n- `S` — 下品な歌が歌われるでしょう",
  "# Modus Tollens\r\nDenying the consequent.\r\n\r\nIf P, then Q.\\\r\nNot Q.\\\r\nTherefore, not P.\r\n```\r\nmt : (P → Q) → ¬Q → ¬P\r\n```\r\n\r\n### Infix Operator:\r\n`modus_tollens` is a specialized version of `imp_trans`, which makes it possible to use `≫` (which is written as “`\\gg`”) as an infix operator for `modus_tollens`.":
- "",
+ "# モーダス・トレンス\r\n含意の結果を否定する\r\n\r\nもしPなら、Qである。\r\nQではない。\\\r\nよって、Pではない。\r\n```\r\nmt : (P → Q) → ¬Q → ¬P\r\n```\r\n\r\n### 中置演算子:\r\n`modus_tollens`は`imp_trans`の特別な場合であるため、`≫`を`modus_tollens`の中置演算子として使える (“`\\gg`”と書ける)。",
  "# Modus Tollens\r\nBy now you're getting used to using `intro` and `apply` on negated propositions. Keep it up!":
  "",
  "# Mixed Up Conjunctions\r\nRecall when you placed the invites for Alarfil, Ilyn, Orin, and Uriel in separate boxes. There was a mix-up in the arrangement. Can you fix it so that Alarfil and Uriel's invites are together?\r\n# Proposition Key:\r\n- A — **A**larfil is invited to the party\r\n- I — **I**lyn is invited to the party\r\n- O — **O**rin is invited to the party\r\n- U — **U**riel is invited to the party":
