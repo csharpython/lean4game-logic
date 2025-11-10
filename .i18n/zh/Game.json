@@ -106,7 +106,7 @@
  "Redux: ∧ World Tactics": "再開：∧ タクティクの世界",
  "Redux: ↔ World Tactics": "",
  "Redux: → World Tactics": "再開：→ タクティクの世界",
- "Redux: ¬ World Tactics": "",
+ "Redux: ¬ World Tactics": "再開：¬ タクティクの世界",
  "Rearranging Boxes": "箱の並べ替え",
  "Practise Makes Perfect": "習うより慣れろ",
  "Phew, that makes perfect sense now.": "ふう、これで完全に納得したよ。",
@@ -144,7 +144,7 @@
  "Left Evidence": "左の証拠",
  "Lean intro to Logic": "",
  "Just like before, you need to keep in mind that `¬P` is defined as `P → False`.\\\r\n\\\r\n∴ `¬False` is actually asking for `False → False`":
- "",
+ "今までと同様に、`¬P`が`P → False`として定義されていることを気に留めておこう。\\\r\n\\\r\n∴ `¬False`は実際は`False → False`を求めている",
  "In this game, the deductive rule *modus_ponens* is just function application.\r\n```\r\nintro h : A ∧ B\r\nhave a : A := and_left h\r\n-- could be written as\r\nhave a : A := modus_ponens and_left h\r\n```\r\nand\r\n```\r\nintro a : A\r\nintro b : B\r\nhave h : A ∧ B := and_intro a b\r\n-- could be written as\r\nhave h : A ∧ B := modus_ponens (modus_ponens and_intro a) b\r\n```\r\n\r\nYou should never use this style of prefix `modus_ponens` and just use function application instead as that will generally be clearer.\r\n\r\n----\r\n# Infix Modus Ponens\r\nThere is are infix operators for function application; they look like `|>` and `<|`. `f <| x`, and `x |> f` means the same as the same as `f x`.\r\n\r\n`<|` parses `x` with lower precedence, which means that `f <| g $ <|` is interpreted as `(f (g x))` rather than `((f g) x)`.\r\n\r\nIt's twin, `|>` chains such that `x |> f |> g` is interpreted as `g (f x)`.\r\n\r\nWhat makes the infix operators useful is that they can often replace a pair of brackets `(...)` making expressions easier to read.\r\n\r\n----\r\n# Computer Science\r\nIf you've done some programming before, you might recognise `Modus Ponens` as the identity function for implications. So `(modus_ponens and_left)` is extensionally equal to `and_left`. There's a conspiracy at work here!":
  "このゲームでは、演繹規則*modus_ponens*は、単なる関数適用である。\r\n```\r\nintro h : A ∧ B\r\nhave a : A := and_left h\r\n-- 次のようにも書ける\r\nhave a : A := modus_ponens and_left h\r\n```\r\nあるいは\r\n```\r\nintro a : A\r\nintro b : B\r\nhave h : A ∧ B := and_intro a b\r\n-- 次のようにも書ける\r\nhave h : A ∧ B := modus_ponens (modus_ponens and_intro a) b\r\n```\r\n\r\nこの形式の接頭辞 `modus_ponens` は決して使うべきでなく、代わりに関数適用を使うのが一般的である。\r\n\r\n----\r\n# 接中辞のモーダス・ポネンス\r\nここには関数適用の接中辞がある：それらは`|>`や`<|`のように見える。`f <| x`と`x |> f`は`f x`と同じ意味である。\r\n\r\n`<|` は`x` を低い優先順位で解析する。つまり、`f <| g <| x` は `((f g) x)`ではなく `(f (g x))` と解釈される。\r\n\r\n`|>`の連鎖は双子のようなもので、`x |> f |> g`は`g (f x)`と解釈される。\r\n\r\nこの接中辞演算子が便利な点は、2つの括弧 `(...)` を置き換えることで、式を読みやすくすることができる所だ。\r\n\r\n----\r\n# コンピューターサイエンス\r\nプログラミングをやったことがある人なら、`modus_ponens`が含意の恒等関数であることに気づくかもしれない。つまり、`(modus_ponens and_left)`は拡張的に`and_left`と等しい。ここには陰謀が働いている！",
  "Implies a Negation": "否定の含意",
@@ -171,7 +171,7 @@
  "Exactly! It's in the premise": "その通り！それは前提にある",
  "Exactly 2 rewrites": "",
  "Double False!": "二重否定！",
- "Double False": "",
+ "Double False": "二重否定",
  "Distribute": "分配",
  "Did you use `intro ⟨p, a⟩` this time?": "",
  "Cool. Chips and Dip!\r\n\r\n----\r\n# A Tip!\r\nIf you're writing a function with more than one parameter, you can just list the parameters. That's a shorthand for nested function declarations.\r\n```\r\nλ(p : P) ↦ λ(q : Q) ↦ h (and_intro p q)\r\n-- can be written as:\r\nλ(p : P)(q : Q) ↦ h (and_intro p q)\r\n-- Or because the propositions of p and\r\n-- q are clear from the goal:\r\nλp q ↦ h (and_intro p q)\r\n```":
@@ -335,7 +335,7 @@
  "# Redux: → World Tactics\r\nWelcome to the redux of the **→ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\r\n\\\r\nThis world introduces tactics that you can use in lieu of the expressions you've learned so far.":
  "# 再開：→ タクティクの世界\r\nチュートリアルの再編集版へようこそ。どのレベルも同じだが、各レベルを`have`と`exact`で解く代わりに、このワールドではカスタムタクティクの数々が開かれている。\r\n\r\nこのワールドでは、これまで学んだ式の代わりに使えるタクティクを紹介している。",
  "# Redux: ¬ World Tactics\r\nWelcome to the redux of the **¬ Tutorial World**. Every level is the same, but instead of solving each level with `have` and `exact`, this world opens up a bunch of custom tactics.\\\r\n\\\r\nThis world introduces tactics that you can use in lieu of the expressions you've learned so far.":
- "",
+ "# 再開：¬ タクティクの世界\r\nチュートリアルの再編集版へようこそ。どのレベルも同じだが、各レベルを`have`と`exact`で解く代わりに、このワールドではカスタムタクティクの数々が開かれている。\r\n\r\nこのワールドでは、これまで学んだ式の代わりに使えるタクティクを紹介している。",
  "# Propositional Identity\r\nThis is the \\\"I think therefore I am\\\" of propositional logic. Like `True` it is a simple tautology whose truth requires no premises or assumptions — only reason alone.\r\n```\r\nidentity : P → P\r\n```":
  "# 恒等性の命題\r\nこれは命題論理の「我思う、ゆえに我あり」である。`True`と同様、単純なトートロジーであり、その真実には前提も仮定も必要ない。ただ理性のみが必要だ。\r\n```\r\nidentity : P → P\r\n```",
  "# Propositional Equivalence\r\n`P ↔ Q` means that `P` and `Q` must have the same truth value. This is often said as “`P` if and only iff `Q`” or “`P` is logically equivalent to `Q`”.\r\n\r\n`iff_intro` is the way to prove a biconditional like `P ↔ Q`. It requires you to show evidence for both `P → Q` and `Q → P`.":
