@@ -54,7 +54,7 @@
  "`False`の証拠を**実際に**見つけることはありませんが、`¬False`の証拠は予想通り非常に単純なトートロジーです。\r\n\r\n----\r\nどの証明を使った？\r\n```\r\nexact identity\r\nexact λ(f : False) ↦ f\r\nexact λf ↦ f\r\n```",
  "You definitely have a knack for providing conditional arguments!": "あなたは条件付き命題の展開が本当に上手ですね！",
  "Write the necessary nested function(s)!": "必要なネストされた関数を作ろう！",
- "Who is loyal, who is a spy?": "",
+ "Who is loyal, who is a spy?": "誰が忠実で、誰がスパイか？",
  "Well, done.\r\n\r\n---\r\n```\r\nexact or_elim h or_inr or_inl\r\n```": "よくやった。\r\n\r\n---\r\n```\r\nexact or_elim h or_inr or_inl\r\n```",
  "Well reasoned": "理にかなっているね！",
  "Well done, you're getting good at this!": "よくやった、上手くなってきたね！",
@@ -98,7 +98,7 @@
  "Right Evidence": "右の証拠",
  "Riffin is bringing a unicorn snack": "Riffinがユニコーンのスナックを持ってくる",
  "Riffin Snacks": "Riffinのスナック",
- "Rewriting": "",
+ "Rewriting": "書き換え",
  "Repeat constructor/assumption until you're done": "完了するまでconstructor／assumptionを繰り返す",
  "Remember `h: P → ¬P` is actually `h : P → P → False`": "`h: P → ¬P`は実際は`h : P → P → False`であることを思い出そう",
  "Remember `h : A → A → False`": "`h : A → A → False`を思いだそう",
@@ -151,7 +151,7 @@
  "Implication of ∨": "∨の含意",
  "Implication across ∨": "∨を跨ぐ含意",
  "Implication Tactic Boss": "「含意」　タクティク　ボス",
- "Iff_mp": "",
+ "Iff_mp": "Iff_mp",
  "Iff_Intro": "Iff_Intro",
  "IffBoss": "",
  "If you have an assumption like `h : P ↔ Q`, then\r\n```\r\niff_mp h -- or\r\nh.mp     -- is evidence for P → Q\r\n\r\niff_mpr h -- or\r\nh.mpr     -- is evidence for Q → P\r\n```":
@@ -318,7 +318,7 @@
  "# Rinse and Repeat\r\nWhen you were writing expressions before, level 4 needed `and_left` while level 5 needed `and_right`. Tactics can incorporate an arbitrary amount of automation. In this case, because `assumption` will do a search through your assumptions for you, your proof for this level can be 100% identical to the one you used in the last level.":
  "# 繰り返し\r\n以前、式を書いていたとき、レベル4では`and_left`が必要だったが、レベル5では`and_right`が必要だ。タクティクは任意の自動化を取り入れることができる。今回は、`assumption`があなたの代わりに仮定を検索してくれるから、このレベルの証明は、前回のレベルで使ったものと100％同じにすることができる。",
  "# Right-Hand Swap\r\nYou'll need h1.mp in order to turn evidence for Q into evidence for R":
- "",
+ "# 右側の交換\r\nQの証拠をRの証拠に変えるにはh1.mpが必要です",
  "# Right-Hand Swap": "",
  "# Rewrite the goal\r\n## To an extreme\r\nYou're playing a round of *The Resistance*. You've been diligently figuring out who is a member of the resistance and who is a spy. It's a bit complicated, but you've reasoned that the current state of affairs is possible if and only if Alarfil and Cyna are members of the resistance and Pippin is a spy. You also know from an earlier reveal that Pippin and Lippa must be on the same team. Therefore, the same argument applies to Lippa as well.\r\n# Proposition Key:\r\n- A — Alarfil is a member of the resistance\r\n- C — Cyna is a member of the resistance\r\n- L — Lippa is a member of the resistance\r\n- P — Pippin is a member of the resistance\r\n# The `rw` tactic\r\nDepending on the order you've chosen to do the tutorial worlds, you may not yet be familiar with all the symbols in the current proof state. In fact, you may not even have unlocked the tools in your inventory necessary to complete this level. Don't worry, the rewrite tactic makes this level a breeze.\\\r\n\\\r\nFirst, take a look at the proof state and notice that `h₂` and the Goal are extremely similar. In fact, if you replace every occurrence of `L` with `P`, then the two would be identical. That's where `rw` comes in.\r\n\\\r\nIf you have `hpq : P ↔ Q` then `rw [hpq]` will change all `P`s in the goal to `Q`s. It's the way to “substitute in”.\\\r\n\\\r\nThe `rw` tactic is an automation tool. It does the rote work of taking apart an expression, looking for a matching sub-expression, swapping in the equivalent sub-expression and then constructing the new equivalent term from there.\\\r\n\\\r\nTry it out!":
  "",
@@ -381,7 +381,7 @@
  "# Let the festivities commence!\r\nYou're hosting your yearly soirée, and it's time to start planning! Last year your planning went so poorly that nobody showed up. Not for lack of trying though, they just wound up at a number of bewildering addresses. The silver lining was that all your friends were safe from the fire when, accidentally, you burned down your entire apartment building.\\\r\n\\\r\nThis year will be different‼ This year, if you want to be sure that there will be fancy cheeses, you had better have evidence that somebody is bringing the cheese platter.\r\n\r\nWorld 1: **Party Invites** is a tutorial world that is meant to introduce you to conjunction — the logical “and”. The symbol used to denote an “and” looks like “`∧`”. You'll learn to how to use evidence to create an `∧` and also how to get evidence out when it's been `∧`ed together.\\\r\n\\\r\nThe real-world analogues for evidence of `A ∧ B` might be a box with evidence for `A` and evidence for `B`, an audio recording with both pieces of evidence, or a tree with evidence in its branches.\\\r\n\\\r\nWhile real-world analogues can be anything, the abstract machinery used in this game will always be the same. In the case of the `∧` operator, the game stores the associated evidence in a tuple data structure.\\\r\n\\\r\nThe details aren't important. Each level will be encoded for you into the symbols of a proof state. The puzzle, at its core, will be about symbol manipulation. Much of the text is there for added fun and flair.\r\n\r\n# **Aside**: Expressions\r\nIf you're coming at this as a puzzle, part of the goal of the tutotial worlds is to teach you how to form expressions and to think about what they evaluate to. Consider how how these expressions all evaluate to the same number:\r\n```\r\n4 + 6\r\n(4) + 6\r\n(4) + (6)\r\n3 + 1 + 6\r\n3 + (1 + 6)\r\n4 + 4 + 2\r\n(4 * 2) + 2\r\n```\r\nand how some things which may look like expressions really are not:\r\n```\r\n4 6\r\n4 +\r\n4 (++) 6\r\n(4 +) 6\r\n```\r\nThe expressions that this game is asking you to form are mostly in prefix form. In context, this means the operation is given a textual name instead of a symbol and the parameters are separated by spaces **after** the name. For example; the above expressions may look like:\r\n```\r\nadd 4 6\r\nadd (4) 6\r\nadd (4) (6)\r\nadd (add 3 1) 6\r\nadd 3 (add 1 6)\r\nadd (add 4 4) 2\r\nadd (mul 4 2) 2\r\n```\r\nWe're not using expressions to express numbers, but many of the concepts do carry over. Instead of numbers, we're working with logical inferences.":
  "# さあ、お祭りの始まりだ！\r\n毎年恒例の晩餐会を開催することになり、そろそろ計画を立て始める時期だ！昨年は計画がうまくいかず、誰も来ませんでした。しかし、努力が足りなかったわけではありません、手紙が多くの不可解な住所に行き着いただけです。 不幸中の幸いだったのは、誤ってアパート全体を全焼させてしまったときに、友人たちが全員無事だったことです。\r\n\r\n今年は違います‼ 高級チーズが出ることを確信したいなら、誰かがチーズの盛り合わせを持ってくるという証拠があったほうがいいでしょう。\r\n\r\nWorld 1: **パーティーの招待** は接続詞 — 論理的な「かつ」 — を紹介するチュートリアルワールドです。「かつ」を表す記号は「`∧`」のように見えます。 証拠を使ってどのように「∧」を作るか、また、「∧」された証拠をどのように取り出すかを学びましょう。\r\n\r\n「A ∧ B」の証拠に似た現実世界のものとして、「A」の証拠と「B」の証拠が入った箱、両方の証拠がある録音データ、あるいは枝に証拠がある木かもしれません。\r\n\r\n現実世界の類似物は何でもあり得ますが、このゲームで使われる抽象的なメカニズムは常に同じです。演算子`∧`の場合では、ゲームは関連する証拠をタプルのデータ構造に格納します。\r\n\r\n詳細は重要ではありません。各レベルは証明状態の記号にエンコードされます。このパズルの核心は、記号の操作にあります。テキストの多くは、楽しさとセンスを加えるためにあります。\r\n\r\n# **余談**： 式\r\nもし、あなたがこれをパズルとして見ているのであれば、チュートリアルワールドのゴールのひとつは、式の立て方と、その式が何に評価されるのかを考える方法を教えることです。これらの式がすべて同じ数に評価される仕組みを考えてみよう：\r\n```\r\n4 + 6\r\n(4) + 6\r\n(4) + (6)\r\n3 + 1 + 6\r\n3 + (1 + 6)\r\n4 + 4 + 2\r\n(4 * 2) + 2\r\n```\r\nそして、一見式のように見えるものが、実はそうではないというもの：\r\n```\r\n4 6\r\n4 +\r\n4 (++) 6\r\n(4 +) 6\r\n```\r\nこのゲームがあなたに求める式は、ほとんどが接頭辞形式です。つまり、記号の代わりにテキスト名をつけ、名前の**後**にあるパラメータの間は空白で区切ります。たとえば、上の式は次のようになります：\r\n```\r\nadd 4 6\r\nadd (4) 6\r\nadd (4) (6)\r\nadd (add 3 1) 6\r\nadd 3 (add 1 6)\r\nadd (add 4 4) 2\r\nadd (mul 4 2) 2\r\n```\r\n数字を表す式は使いませんが、多くの概念は引き継がれます。数字の代わりに論理的推論を扱います。",
  "# Left-Hand Swap\r\nYou'll need `h1.mpr` in order to turn evidence for R into evidence for P":
- "",
+ "# 左手の交換\r\nRの証拠をPの証拠に変えるには`h1.mpr`が必要です",
  "# Left-Hand Swap": "",
  "# Keep rewriting!\r\nIt's another round of the resistance! This time you know that if you could prove that Alarfil, Cyna, or Lippa are part of the resistance, then that would be good enough to show that least one of the other two are spies.\\\r\n\\\r\nIt doesn't really matter how your friends are paired up, the same truth will hold.\r\n# Proposition Key:\r\n- A — Alarfil is a member of the resistance\r\n- C — Cyna is a member of the resistance\r\n- L — Lippa is a member of the resistance\r\n## New Theorems\r\nTwo new theorems have been unlocked for this level. We'll make you prove them later — though I imagine they make a certain amount of intuitive sense regardless.\r\n1. `or_assoc : P ∨ Q ∨ R ↔ (P ∨ Q) ∨ R`\r\n2. `and_assoc : P ∧ Q ∧ R ↔ (P ∧ Q) ∧ R`\r\n## A Challenge\r\nYou'll likely see the way this can be solved using the `rw` tactic. In this case, there's a nice and short proof that doesn't use `rw`. If you want the extra challenge, see if you can see it.":
  "",
